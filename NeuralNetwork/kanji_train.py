@@ -60,6 +60,10 @@ def train():
     sess = tf.Session(config=tf.ConfigProto(
         log_device_placement=FLAGS.log_device_placement))
     sess.run(init)
+	
+    # save the graph
+    tf.train.write_graph(sess.graph_def, FLAGS.train_dir, 'model.pbtxt')  
+
 
     # Start the queue runners.
     tf.train.start_queue_runners(sess=sess)

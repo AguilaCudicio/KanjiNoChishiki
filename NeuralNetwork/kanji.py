@@ -139,7 +139,7 @@ def distorted_inputs():
   images, labels = kanji_input.distorted_inputs(data_dir='',
                                                   batch_size=FLAGS.batch_size,file_name='training.bin')
   if FLAGS.use_fp16:
-    images = tf.cast(images, tf.float16)
+    images = tf.cast(images, tf.float16,name="I")
     labels = tf.cast(labels, tf.float16)
   return images, labels
 
@@ -226,6 +226,8 @@ def inference(images):
     biases = _variable_on_cpu('biases', [64], tf.constant_initializer(0.0))
     pre_activation = tf.nn.bias_add(conv, biases)
     conv1 = tf.nn.relu(pre_activation, name=scope.name)
+	
+    print("-----------------------------------"+scope.name+"--------------")
     _activation_summary(conv1)
 
   # pool1
