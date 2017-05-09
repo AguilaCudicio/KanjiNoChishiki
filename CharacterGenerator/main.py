@@ -131,6 +131,7 @@ def GenerateCharacters():
 font_dir = 'fonts'  
   
 # Output  
+# TODO: si no existe deberia crearlo
 out_dir1 = 'filea/'
 out_dir2 = 'fileb/'
 
@@ -157,9 +158,21 @@ image_size = 32
   
 #----------------------------------- Main --------------------------------#  
   
+#Check if fonts directory exist
+if not os.path.isdir(font_dir):
+     sys.exit("A directory named fonts should exist. It should content all the fonts you want to use to generate images")
+
+# Create directories if they don't exist
+if not os.path.exists(out_dir1):
+     os.makedirs(out_dir1)
+if not os.path.exists(out_dir2):
+     os.makedirs(out_dir2)  
+
 # Do cleanup  
 Cleanup(out_dir1)  
-Cleanup(out_dir2)  
+Cleanup(out_dir2)
+
+
 
 # Generate characters  
 GenerateCharacters()  
