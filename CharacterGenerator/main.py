@@ -130,8 +130,7 @@ def GenerateCharacters():
 # Directory containing fonts  
 font_dir = 'fonts'  
   
-# Output  
-# TODO: si no existe deberia crearlo
+# Output
 out_dir1 = 'filea/'
 out_dir2 = 'fileb/'
 
