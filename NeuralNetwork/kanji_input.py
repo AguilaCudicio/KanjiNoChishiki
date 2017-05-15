@@ -16,6 +16,7 @@ import tensorflow as tf
 IMAGE_SIZE = 24
 
 # Global constants describing the KANJI data set.
+# It's important to change this if you want to add new kanjis to the data set...
 NUM_CLASSES = 1006
 NUM_EXAMPLES_PER_EPOCH_FOR_TRAIN = 102612
 NUM_EXAMPLES_PER_EPOCH_FOR_EVAL = 51306
@@ -47,7 +48,7 @@ def read_kanji(filename_queue):
     pass
   result = KANJIRecord()
 
-  # Dimensions of the images in the KANJI dataset.
+  # Dimensions of the images in the KANJI dataset. Copied from Cifar-10 model.
   # See http://www.cs.toronto.edu/~kriz/cifar.html for a description of the
   # input format.
   label_bytes = 4  # 2 for KANJI0
