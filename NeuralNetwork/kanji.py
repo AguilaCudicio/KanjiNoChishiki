@@ -136,7 +136,7 @@ def distorted_inputs():
   images, labels = kanji_input.distorted_inputs(data_dir='',
                                                   batch_size=FLAGS.batch_size,file_name='training.bin')
   if FLAGS.use_fp16:
-    images = tf.cast(images, tf.float16,name="I")
+    images = tf.cast(images, tf.float16)
     labels = tf.cast(labels, tf.float16)
   return images, labels
 
@@ -214,6 +214,7 @@ def inference(images):
   # by replacing all instances of tf.get_variable() with tf.Variable().
   #
   # conv1
+  images = tf.identity(images, name='Inputs') 
   with tf.variable_scope('conv1') as scope:
     kernel = _variable_with_weight_decay('weights',
                                          shape=[5, 5, 3, 64],

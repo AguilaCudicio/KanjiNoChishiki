@@ -40,7 +40,7 @@ with tf.gfile.Open(output_frozen_graph_name, "rb") as f:
 
 output_graph_def = optimize_for_inference_lib.optimize_for_inference(
         input_graph_def,
-        ["I"], # an array of the input node(s)
+        ["Inputs"], # an array of the input node(s)
         ["softmax_linear/softmax_linear"], # an array of output nodes
         tf.float32.as_datatype_enum)
 
