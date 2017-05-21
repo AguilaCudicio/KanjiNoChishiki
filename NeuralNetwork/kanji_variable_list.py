@@ -1,4 +1,4 @@
-# A binary to train using a single GPU.
+# Read the optimized model and print the variables.. This is used for debugging
 # ==============================================================================
 
 
@@ -6,12 +6,10 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from datetime import datetime
 import os.path
-import time
 
 import numpy as np
-from six.moves import xrange  # pylint: disable=redefined-builtin
+from six.moves import xrange
 import tensorflow as tf
 
 import kanji

@@ -1,0 +1,1006 @@
+﻿一	Uno	ichi, itsu	hito-tsu
+二	Dos	ni, ji	futa-tsu
+三	Tres	san　	mit-tsu
+四	Cuatro	shi	yot-tsu o yon
+五	Cinco	go	itsu-tsu
+六	Seis	roku	mut-tsu
+七	Siete	shichi	nana-tsu
+八	Ocho	hachi	yat-tsu
+九	Nueve	ku o kyū	kokono-tsu
+十	Diez	jū	tō
+百	Cien	hyaku	momo
+千	Mil	sen	chi
+上	Arriba	jō	ue
+下	Abajo	ka o ge	shita
+左	Izquierda	sa	hidari
+右	Derecha	u o yū	migi
+中	Dentro, en medio	chū	naka
+大	Grande	dai	ō-kii
+小	Pequeño	shō	chii-sai
+月	Mes; Luna	gatsu o getsu	tsuki
+日	Día; Sol	nichi	hi
+年	Año	nen	toshi
+早	Temprano	sō	haya-i
+木	Árbol	moku; boku	ki
+林	Arboleda	rin	hayashi
+山	Montaña	san	yama
+川	Río	sen	kawa
+土	Tierra	do	tsuchi
+空	Cielo	kū	sora
+田	Campo de arroz	den	ta
+天	Paraíso	ten	ama
+生	Vida	sei o shō	i-kiru o u-mu o nama
+花	Flor	ka	hana
+草	Hierba	sō	kusa
+虫	Insecto	chū	mushi
+犬	Perro	ken	inu
+人	Persona	jin o nin	hito
+名	Nombre	mei o myō	na
+女	Mujer	jo o nyo	on'na
+男	Hombre	dan o nan	otoko
+子	Niño	shi o su	ko
+目	Ojo	moku	me
+耳	Oreja	ji o ni	mimi
+口	Boca	kō	kuchi
+手	Mano	shu	te
+足	Pierna	soku	ashi
+見	Ver	ken	mi-ru
+音	Sonido	on	ne o oto
+力	Fuerza	riki o ryoku	chikara
+気	Espíritu	ki o ke
+円	Círculo; yen	en	maru
+入	Entrar	nyū	hai-ru o i-ru
+出	Salir	shutsu	de-ru
+立	Levantarse	ritsu	ta-tsu
+休	Descansar	kyū	yasu-mu
+先	Anterior	sen	saki
+夕	Tarde	seki	yū
+本	Libro	hon	moto
+文	Escritura	bun o mon	fumi
+字	Carácter	ji	azana
+学	Estudio	gaku	mana-bu
+校	Escuela	kō
+村	Pueblo	son	mura
+町	Ciudad	chō	machi
+森	Bosque	shin	mori
+正	Correcto	sei	tada-shii
+水	Agua	sui	mizu
+火	Fuego	ka	hi
+玉	Bola, joya	gyoku	tama
+王	Rey	ō
+石	Piedra	seki	ishi
+竹	Bambú	chiku	take
+糸	Hilo	shi	ito
+貝	Concha		kai
+車	Coche	sha	kuruma
+金	Oro	kin	kane
+雨	Lluvia	u	ame
+赤	Rojo	seki	aka
+青	Azul	sei	ao
+白	Blanco	haku	shiro
+数	Números	sū	kazu
+多	Mucho	ta	ō-i
+少	Un poco	shō	suku-nai,suko-shi
+万	Diez mil	man	yorozu
+半	Mitad, y media	han	naka-ba
+形	Forma	kei o gyō	katachi
+太	Gordo	ta	futo-i
+細	Delgado	sai	hoso-i
+広	Ancho	kō	hiro-i
+長	Largo	chō	naga-i
+点	Puntos	ten	bochi
+丸	Circulo, redondo	gan	maru
+交	Mezcla	kō	maji-waru
+光	Brillo	kō	hikari
+角	Esquina	kaku	kado, tsuno, sumi
+計	Medida	kei	haka-ru
+直	De inmediato, recto, correcto	choku, jiki	tada-chi,nao-su
+線	Línea, cable	sen
+矢	Flecha	shi	ya
+弱	Débil	jaku	yowa-i
+強	Fuerte	kyō	tsuyo-i
+高	Alto	kō	taka-i
+同	Igual	dō	ona-ji
+親	Padres	shin	oya
+母	Madre	bo	haha, kaa
+父	Padre	fu	chichi, tou
+姉	Hermana mayor	shi	ane
+兄	Hermano mayor	kei	ani
+弟	Hermano menor	tei o dai	otouto
+妹	Hermana menor	mai	imōto
+自	Uno mismo	ji o shi	mizuka-ra
+友	Amigo	yū	tomo
+体	Cuerpo	tai	karada
+毛	Pelaje, vello	mō	ke
+頭	Cabeza	tō	atama
+顔	Cara	gan	kao
+首	Cuello	shu	kubi
+心	Corazón	shin	kokoro
+時	Tiempo	ji	toki
+曜	Día de la semana	yō
+朝	Mañana	chō	asa
+昼	Tarde	chū	hiru
+夜	Noche	ya	yoru
+分	Minuto; entender	fun, bun	wa-karu
+週	Semana　	shū
+春	Primavera	shun	haru
+夏	Verano	ka	natsu
+秋	Otoño	shū	aki
+冬	Invierno	tō	fuyu
+今	Ahora	kon	ima
+新	Nuevo	shin	atara-shii
+古	Viejo	ko	furu-i
+間	Intervalo de tiempo, espacio	kan, ken	ma, aida
+方	Persona, manera	hō	kata
+北	Norte	hoku	kita
+南	Sur	nan	minami
+東	Este	tō	higashi, azuma
+西	Oeste	sei o sai	nishi
+遠	Lejos　	en	tō-i
+近	Cerca	kin	chika-i
+前	Antes, delante de	zen	mae
+後	Detrás, después de	go, kou	nochi,ushi-ro,ato
+内	Dentro	nai	uchi
+外	Fuera	gai o ge	soto, hoka,hazu-su
+場	Lugar	jō	ba
+地	Tierra	chi o ji
+国	País	koku	kuni
+園	Parque, jardín	en	sono
+谷	Valle	koku	tani
+野	Llanura	ya	no
+原	Prado	gen	hara
+里	Aldea, pueblo	ri	sato
+市	Ciudad	shi	ichi
+京	Capital	kyō o kei
+風	Viento	fū	kaze
+雪	Nieve	setsu	yuki
+雲	Nube	un	kumo
+池	Lago	chi	ike
+海	Mar	kai	umi
+岩	Roca	gan	iwa
+星	Estrella	sei	hoshi
+室	Habitación	shitsu	muro
+戸	Puerta	ko	to o be
+家	Casa	ka o ke	ie
+寺	Templo budista	ji	tera
+通	Atravesar	tsū	tō-ru
+門	Puertas	mon	kado
+道	Camino	dō	michi
+話	Hablar	wa	hanashi
+言	Decir	gen, gon	i-u,koto
+答	Responder	tō	kota-eru
+声	Voz	sei	koe
+聞	Escuchar	bun o mon	ki-ku
+語	Idioma	go	kata-ru
+読	Leer	doku	yo-mu
+書	Escribir	sho	ka-ku
+記	Anotar	ki	shiru-su
+紙	Papel　	shi	kami
+画	Dibujo	ga o kaku
+絵	Cuadro, pintura	kai	e
+図	Dibujo, planear, diseñar	zu	haka-ru
+工	Construcción	kō o ku
+教	Enseñar, ser enseñado	kyō	oshi-eru
+晴	Despejarse (tiempo atmosférico)	sei	hare
+思	Pensar	shi	omo-u
+考	Pensar, considerar	kō	kanga-eru
+知	Saber	chi	shi-ru
+才	Talento, habilidad	sai, zai	wazukani, zae
+理	Lógica, razón	ri	kotowari
+算	Cálculo	san
+作	Hacer, construir	saku	tsuku-ru
+元	Origen, comienzo	gen o gan	moto
+食	Comer	shoku	ta-beru,ku-u
+肉	Carne	niku
+馬	Caballo	ba	uma or ma
+牛	Vaca	gyū	ushi
+魚	Pez	gyo	uo o sakana
+鳥	Pájaro	chō	tori
+羽	Plumas	u	ha or hane
+鳴	Emitir sonido (animal)	mei	na-ku
+麦	Cebada, trigo	baku	mugi
+米	Arroz	bei o mai	kome
+茶	Té	cha o sa
+色	Color	shoku	iro
+黄	Amarillo	ō	ki
+黒	Negro	koku	kuro
+来	Venir	rai	ku-ru
+行	Ir	kō o gyō	i-ku,yu-ku,okonau
+帰	Volver	ki	kae-ru
+歩	Andar	ho	aru-ku,ayu-mu
+走	Correr	sō	hashi-ru
+止	Parar	shi	to-maru
+活	Vida, energía	katsu	i-kiru
+店	Tienda	ten	mise
+買	Comprar	bai	ka-u
+売	Vender	bai	u-ru
+午	Mediodía	go	uma
+汽	Vapor	ki
+弓	Arco	kyū	yumi
+回	-nº de veces, girar	kai
+会	Reunirse	kai o e	a-u
+組	Grupo, equipo	so	kumi
+船	Barco	sen	fune
+明	Luz, claro	mei	aka-rui
+社	Compañía	sha	yashiro
+切	Cortar	setsu	ki-ru
+電	Eletricidad	den
+毎	Cada	mai
+合	Ser correcto	gō	a-u
+当	Acertar	tō	a-taru
+台	Estante	dai o tai
+楽	Diversión	raku	tano-shii
+公	Público	kou	ōyake
+引	Tirar	in	hi-ku
+科	Departamento	ka
+歌	Canción	ka	uta
+刀	Espada	tō	katana
+番	Turno, orden	ban
+用	Usar	yō	mochi-iru
+何	¿Qué?	ka	nani o nan
+丁	Barrio, distrito	chō
+世	Mundo	sei o se	yo
+両	Ambos	ryō
+主	Dueño, señor	shu	nushi o omo
+乗	Montar, subir en vehículo	jō	no-ru
+予	Previo	yo	
+事	Cosa, hecho	ji	koto
+仕	Servir, asistir	shi	tsuka-eru
+他	Otro	ta	hoka
+代	Sustituir	dai o tai	ka-waru o yo
+住	Vivir	jū	su-mu
+使	Usar	shi	tsuka-u
+係	Deber, concernir	kei	kakari o kaka-ru
+倍	Doble, veces	bai
+全	Todo, entero	zen	matta-ku
+具	Herramienta	gu
+写	Copiar	sha	utsu-su
+列	Fila, línea	retsu
+助	Ayudar, salvar	jo	tasu-keru
+勉	Esforzarse	ben	tsuto-meru
+動	Moverse	dō	ugo-ku
+勝	Ganar	shō	ka-tsu
+化	Cambiar, transformarse	ka	ba-keru
+区	Barrio	ku
+医	Doctor, médico	i
+去	Dejar, abandonar	kyo or ko	sa-ru
+反	Anti-	han	so-ru
+取	Tomar, coger	shu	to-ru
+受	Recibir	ju	u-keru
+号	Número	gō
+向	Oponerse	kō	mu-kau
+君	Tú	kun	kimi
+味	Sabor	mi	aji o aji-wau
+命	Vida	mei	inochi
+和	Paz, calma	wa
+品	Artículo	hin	shina
+員	Empleado	in
+商	Vender, negociar	shō
+問	Pregunta	mon	to-u o ton
+坂	Cuesta		saka
+央	Centro, en medio	ō
+始	Comenzar	shi	haji-meru
+委	Confiar	i	yuda-neru
+守	Guardar, proteger	shu	mamo-ru
+安	Barato	an	yasu-i
+定	Decidir	tei o jō	sada-meru
+実	Fruta o contenido	jitsu	mi o mino-ru
+客	Visitante	kyaku
+宮	Príncipe	kyū	miya
+宿	Posada, alojar	shuku	yado o yado-ru
+寒	Frío	kan	samu-i
+対	Opuesto	tai
+局	Oficina	kyoku
+屋	Casa, tienda	oku	ya
+岸	Playa, costa	gan	kishi
+島	Isla	tō	shima
+州	Estado, provincia	shū
+帳	Registro	chō
+平	Llano, liso	hei o byō	tai-ra o hira
+幸	Felicidad	kō	saiwa-i o shiawa-se
+度	Veces, grados	do
+庫	Almacén	ko
+庭	Jardín	tei	niwa
+式	Método, sistema	shiki
+役	Oficio	yaku
+待	Esperar	tai	ma-tsu
+急	Apresurarse	kyū	iso-gu
+息	Respiración	soku	iki
+悪	Malo	aku	waru-i
+悲	Tristeza	hi	kana-shii
+想	Pensamiento	sō	omo-i
+意	Idea	i
+感	Sentimiento	kan
+所	Lugar	sho	tokoro
+打	Golpear	da	u-tsu
+投	Lanzar, arrojar	tō	na-geru
+拾	Recoger		hiro-u
+持	Sostener	ji	mo-tsu
+指	Dedo	shi	yubi o sa-su
+放	Liberar	hō	hana-su
+整	Poner en orden	sei	totono-eru
+旅	Viaje	ryo	tabi
+族	Tribu, familia	zoku
+昔	Tiempo pasado		mukashi
+昭	Luminoso	shō
+暑	Caliente	sho	atsu-i
+暗	Oscuro	an	kura-i
+曲	Torcer, girar	kyoku	ma-garu
+有	Tener, ser	yū	a-ru
+服	Ropa	fuku
+期	Periodo de tiempo	ki
+板	Tablero	han o ban	ita
+柱	Pilar	chū	hashira
+根	Raíz	kon	ne
+植	Plantar	shoku	u-eru
+業	Negocio, industria	gyō
+様	Señor	yō	sama
+横	Lado	ō	yoko
+橋	Puente	kyō	hashi
+次	Siguiente	ji	tsugi o tsu-gu
+歯	Dientes	shi	ha
+死	Muerte	shi	shi-nu
+氷	Hielo	hyō	kōri
+決	Decidir	ketsu	ki-meru
+油	Aceite	yu	abura
+波	Ola	ha	nami
+注	Vertir	chū	soso-gu
+泳	Nadar	ei	oyo-gu
+洋	Océano, occidental	yō
+流	Corriente	ryū	naga-reru
+消	Borrar, eliminar	shō	ki-eru o ke-su
+深	Hondo	shin	fuka-i
+温	Templado	on	atata-kai
+港	Puerto	kō	minato
+湖	Lago	ko	mizūmi
+湯	Agua caliente	tō	yu
+漢	China	kan
+炭	Carbón	tan	sumi
+物	Cosa	butsu o motsu	mono
+球	Pelota, bola	kyū	tama
+由	Razón	yū o yu　	yoshi
+申	Decir		mō-su
+界	Mundo	kai
+畑	Campo		hata o hatake
+病	Enfermeda	byō	yamai
+発	Abrir, exponer	hatsu
+登	Escalar	tō o to	nobo-ru
+皮	Piel	hi	kawa
+皿	Plato		sara
+相	Conjuntamente	sō	ai
+県	Prefectura	ken
+真	Puro	shin	ma
+着	Vestir, llegar	chaku	ki-ru o tsu-ku
+短	Corto	tan	mijika-i
+研	Pulir, afilar	ken	to-gu
+礼	Saludo	rei
+神	Dios	shin or jin	kami
+祭	Festival	sai	matsu-ri
+福	Fortuna	fuku
+秒	Segundo (ud. de tiempo)	byō
+究	Profundizar	kyū
+章	Capítulo	shō
+童	Niño	dō
+笛	Flauta	teki	fue
+第	Prefijo ordinal	dai
+筆	Pincel de escritura	hitsu	fude
+等	Clase	tō	hito-shii
+箱	Caja		hako
+級	Nivel	kyū
+終	Terminar, fin	shū	o-waru
+緑	Verde	ryoku	midori
+練	Ejercitar	ren	ne-ru
+羊	Oveja	yō	hitsuji
+美	Belleza	bi	utsuku-shii
+習	Aprender, estudiar	shū	nara-u
+者	Persona	sha	mono
+育	Criar, educar	iku	soda-tsu
+苦	Doloroso, sufrimiento	ku	kuru-shii o niga-i
+荷	Carga, equipaje	ka	ni
+落	Caer	raku	o-chiru
+葉	Hoja	yō	ha
+薬	Medicina	yaku	kusuri
+血	Sangre	ketsu	chi
+表	Superficie	hyō	omote o arawa-su
+詩	Poema	shi
+調	Investigar	chō	shira-beru
+談	Discutir	dan
+豆	Legumbres, habichuelas	tō o zu	mame
+負	Perder	fu	ma-keru u o-u
+起	Levantarse, despertarse	ki	o-kiru
+路	Camino	ro	ji
+身	Cuerpo	shin	mi
+転	Rodar	ten	koro-bu
+軽	Ligero	kei	karu-i
+農	Agricultura	nō
+返	Devolver	hen	kae-su
+追	Expulsar	tsui	o-u
+送	Regalar, enviar	sō	oku-ru
+速	Rápido	soku	haya-i
+進	Avanzar	shin	susu-mu
+遊	Jugar	yū	aso-bu
+運	Transportar	un	hako-bu
+部	Sección	bu
+都	Capital	to or tsu	miyako
+配	Distribuir	hai	kuba-ru
+酒	Vino de arroz, sake	shu	sake o saka
+重	Pesado	jū o chō	omo-i o kasa-neru
+鉄	Hierro	tetsu
+銀	Plata	gin
+開	Abrir	kai	hira-ku o a-ku
+院	Institución	in
+陽	Positivo	yō
+階	Planta	kai
+集	Coleccionar	shū	atsu-maru
+面	Cara	men　	omo-te o tsura
+題	Tema	dai
+飲	Bebida	in	no-mu
+館	Edificio	kan
+駅	Estación de tren	eki
+鼻	Nariz	bi	hana
+不	Prefijo negativo: in-, des-	fu o bu
+争	Pelear	sō	araso-u
+付	Pegar, adjuntar	fu	tsu-ku
+令	órdenes	rei
+以	Además de, más que	i
+仲	Mediación	chū	naka
+伝	Transmitir	den	tsuta-eru
+位	Posición, aproximadamente	i	kurai
+低	Bajo	tei	hiku-i
+例	Ejemplo	rei	tato-eru
+便	Conveniencia	ben o bin	tayo-ri
+信	Confiar	shin
+倉	Almacén	sō	kura
+候	Clima	kō
+借	Pedir prestado, alquilar	shaku	ka-riru
+停	Parada, interrupción	tei
+健	Salud, saludable	ken
+側	Lado	soku	kawa
+働	Trabajar	dō	hatara-ku
+億	Cien millones	oku
+兆	Presagio, billón	chō	kiza-shi
+児	Recién nacido	ji o ni
+共	Ambos, juntos	kyō	tomo
+兵	Soldado	hei o hyō	tsuwamono
+典	Escrito, código	ten
+冷	Frío(objeto)	rei	tsume-tai o hi-eru o sa-meru
+初	Comienzo	sho	hatsu o haji-me
+別	Separar	betsu	waka-reru
+利	Ser efectivo	ri
+刷	Impreso	satsu	su-ru
+副	Vice-, duplicado	fuku
+功	Logro, mérito	kō
+加	Añadir, sumar	ka	kuwa-eru
+努	Esfuerzo	do	tsuto-meru
+労	Trabajo duro	rō	negira-u
+勇	Estar en buen estado	yū	isa-mu
+包	Envolver, empaquetar	hō	tsutsu-mu
+卒	Graduación	sotsu
+協	Colaboración	kyō
+単	Sencillo	tan
+博	Amplio, abundante	haku
+印	Marca, signo	in	shirushi
+参	Asistir, ir [hum]	san	mai-ru
+史	Historia	shi
+司	Dirigir, gobernar	shi
+各	Cada uno	kaku	ono-ono
+告	Informar, revelar	koku	tsu-geru
+周	Circunferencia	shū	mawa-ri
+唱	Recitar	shō	tona-eru
+喜	Divertirse	ki	yoroko-bu
+器	Vasija, envase	ki	utsuwa
+囲	Rodear	i	kako-u
+固	Endurecer, fijar	ko	kata-maru
+型	Modelo, patrón	kei	kata
+堂	Salón	dō
+塩	Sal	en	shio
+士	Samurai	shi
+変	Cambiar, alterar	hen	ka-waru
+夫	Esposo	fu fuu bu	otto
+失	Perder	shitsu	ushina-u
+好	Gustar, preferir	kō	su-ku o kono-mu
+季	Estación del año	ki
+孫	Nieto	son	mago
+完	Perfección, final	kan
+官	Gobierno gubernamental	kan
+害	Desastre, obstáculo	gai
+察	Adivinar	satsu
+巣	Nido	sō	su
+差	Diferencia	sa
+希	Deseo, raro	ki	mare
+席	Asiento	seki
+帯	Faja	tai	obi
+底	Al fondo	tei	soko
+府	Municipio	fu
+康	Tranquilo	kō
+建	Construir	ken	ta-teru
+径	Diámetro	kei
+徒	Compañero	to
+得	Conseguir, obtener	toku	e-ru
+必	Necesariamente	hitsu	kanara-zu
+念	Deseo, pensamiento	nen
+愛	Amor　	ai
+成	Llegar a ser, hacerse	sei	na-ru
+戦	Guerra, pelear	sen	ikusa o tataka-u
+折	Quebrar	setsu	o-ru
+挙	Levantar, poner un ejemplo	kyo	a-geru
+改	Cambiar, reformar	kai	arata-meru
+救	Rescatar, salvar	kyū	suku-u
+敗	Fallo, ser derrotado	hai	yabu-reru
+散	Esparcir	san	chi-ru
+料	Material, precio	ryō
+旗	Bandera	ki	hata
+昨	Previo	saku
+景	Paisaje, vista	kei
+最	Prefijo superlativo	sai	mo o motto-mo
+望	Desear, esperar	bō	nozo-mu
+未	Aún no, todavía	mi	ima-da
+末	Fin	matsu	sue
+札	Etiqueta	satsu	fuda
+材	Talento	zai
+束	Manojo, racimo	soku	taba or tsuka
+松	Pino	shō	matsu
+果	Fruto, resultado, llevar a cabo	ka	ha-tasu
+栄	Prosperar, florecer	ei	saka-eru
+案	Plan, idea, sugerencia	an
+梅	Ciruela	bai	ume
+械	Artículo, instrumento	kai
+極	Polo terrestre o magnético	kyoku	kiwa-meru
+標	Marca, signo	hyō
+機	Máquina, telar	ki	hata
+欠	Romperse	ketsu	ka-keru
+歴	Pasar tiempo	reki
+残	Quedar, dejar	zan	noko-ru
+殺	Matar, asesinar	satsu	koro-su
+毒	Veneno	doku
+氏	Apellido	shi	uji
+民	Gente	min	tami
+求	Pedir, demandar	kyū	moto-mu
+治	Gobernar	chi or ji	osa-meru o nao-ru
+法	Método, ley	hō
+泣	Llorar, cantar(pájaros)	kyū	na-ku
+浅	Poco profundo	sen	asa-i
+浴	Bañarse	yoku	abi-ru
+清	Puro	sei or shō	kiyo-raka
+満	Estar lleno	man	mi-chiru
+漁	Pesca	ryō o gyō	asa-ru
+灯	Lámpara, luz	tō	hi
+無	Nada	mu or bu	na-i
+然	Así, de esa forma	zen o nen	shika-shi
+焼	Quemar, asar	shō	ya-ku
+照	Iluminar	shō	te-rasu
+熱	Caliente	netsu	atsu-i
+牧	Pastorear	boku	maki
+特	Especial	toku
+産	Dar a luz	san	u-mu
+的	Objetivo, propósito	teki	mato
+省	Ministerio del gobierno	sho o sei	habu-ku
+祝	Celebrar	shuku	iwa-u
+票	Voto	hyō
+種	Semilla, tipo, clase	shu	tane
+積	Apilar, acumular	seki	tsu-mu
+競	Competir, rivalizar	kyō	kiso-u
+笑	Reír, sonreír	shō	wara-u
+管	Tubería	kan	kuda
+節	Articulación, unión	setsu	fushi
+粉	Harina, polvo	fun	ko or kona
+紀	Crónica	ki
+約	Promesa	yaku
+結	Atar, unir	ketsu	musu-bu o yu-u
+給	Sueldo	kyū	tama-u
+続	Continuar, seguir	zoku	tsudu-ku
+置	Colocar	chi	o-ku
+老	Envejecer	rō	o-iru
+胃	Estómago, barriga	i
+脈	Vena	myaku
+腸	Intestino, vísceras	chō
+臣	Criado	shin
+航	Navegar	kō
+良	Bueno	ryō	yo-i
+芸	Arte	gei
+芽	Brote	ga	me
+英	Inglaterra, excelente	ei
+菜	Verduras, vegetales	sai	na
+街	Ciudad	gai	machi
+衣	Ropas	i	koromo
+要	Necesitar	yō	i-ru
+覚	Recordar, memorizar	kaku	obo-eru o sa-meru
+観	Observar, punto de vista	kan	mi-ru
+訓	Lección, lectura kun	kun
+試	Prueba	shi	kokoromi-ru o tame-su
+説	Teoría, explicar	setsu	to-ku
+課	Capítulo, sección	ka
+議	Deliberar, considerar	gi
+象	Forma, imitar	zō or shō	
+貨	Dinero, bienes	ka
+貯	Ahorrar	cho	ta-meru
+費	Gastar	hi	tsui-yasu
+賞	Premio	shō
+軍	Ejército, tropas	gun
+輪	Anillo, aro, rueda	rin	wa
+辞	Renunciar, dimitir	ji	ya-meru
+辺	Vecindad	hen	ata-ri
+連	Unir, acompañar	ren	tsu-reru o tsura-neru
+達	Realizar, alcanzar		tachi
+選	Elegir	sen	era-bu
+郡	Condado, distrito	gun
+量	Medir	ryō
+録	Registro, copia	roku
+鏡	Espejo	kyō	kagami
+関	Barrera, valla	kan	seki
+陸	Tierra	riku
+隊	Grupo	tai
+静	Tranquilo	sei	shizu-ka
+順	Orden, turno	jun
+願	Desear, pedir, rogar	gan	nega-u
+類	Variedad, clase	rui
+飛	Volar	hi	to-bu
+飯	Comida	han	meshi
+養	Criar, mantener	yō	yashina-u
+験	Prueba	ken
+久	Mucho tiempo, largo tiempo	kyū	hisa
+仏	Buda, Francia, muerto	hutsu o butsu	hotoke
+仮	Temporal, falso	ka o ke	kari
+件	Asunto, caso	ken
+任	Responsabilidad, confiar a	nin	maka-seru
+似	Parecerse	ji	ni-ru
+余	Ser demasiado, sobrar	yo	ama-ru
+価	Valor	ka	atai
+保	Mantener, garantizar	ho	tamo-tsu
+修	Disciplina, controlar	shū	osa-meru
+俵	Saco de paja	hyō	tawara
+個	Individual, individuo	ko
+備	Equipar, proveer	bi	sona-eru
+像	Estatua, imagen, figura	zō
+再	De nuevo	sai o sa	futata-bi
+刊	Publicar, editar	kan
+判	Distinguir, juzgar	han	waka-ru
+制	Comprobar, determinar	sei
+券	Ticket, billete	ken
+則	Norma, regla	soku	notto-ru
+効	Eficaz	kō	ki-ku
+務	Tarea, servir	mu	tsuto-meru
+勢	Fuerza, vigor	sei	ikio-i
+厚	Grueso, espeso	kō	atsu-i
+句	Frase, cláusula	ku
+可	Posible	ka
+営	Dirigir un negocio	ei	itona-mu
+因	Causa	in	yo-ru
+団	Equipo, grupo	dan or ton
+圧	Presión, opresión	atsu
+在	Existir, ser	zai	a-ru
+均	Nivel	kin
+基	Fundamento, origen	ki	moto-duku
+報	Informar, recompensar	hō	muku-iru
+境	Borde, límite, frontera	kyō	sakai
+墓	Tumba	bo	haka
+増	Aumentar, incrementar	zō	ma-su o fu-eru
+夢	Sueño	mu	yume
+妻	Esposa	sai	tsuma
+婦	Señora, esposa	fu
+容	Contenido	yō
+寄	Colaborar, apoyarse en	ki	yo-ru
+富	Riqueza	fu	tomi
+導	Guiar	dō	michibi-ku
+居	Ser	kyo	i-ru
+属	Subordinación, obediencia	zoku
+布	Tela	fu	nuno
+師	Maestro, experto	shi
+常	Normal, siempre	jō	tsune
+幹	Tronco del árbol, base	kan	miki
+序	Inicio, comienzo	jo
+弁	Dicurso, dialecto	ben
+張	Hinchar, ensanchar	chō	ha-ru
+往	Viaje	ō
+復	Volver, regresar	fuku
+徳	Virtud	toku
+志	Aspirar, desear	shi	kokorozashi
+応	Responder, contestar	ō
+快	Agradable, placentero	kai	kokoroyo-i
+性	Género, sexo	sei o shō	saga
+恩	Bondad	on
+情	Simpatía, emoción	jō	nasa-ke
+態	Figura, apariencia	tai
+慣	Acostumbrarse	kan	na-reru
+承	Escuchar, ser informado	shō	uketamawa-ru
+技	Habilidad, arte, técnica	gi	waza
+招	Invitar, convocar	shō	mane-ku
+授	Instruir, conceder, otorgar	ju	sazu-keru
+採	Recoger (fruta), adoptar (medida)	sai	to-ru
+接	Unir, conectar, contactar	setsu	ses-suru o tsu-gu
+提	Tomar, llevar en la mano	tei	sa-geru
+損	Perder, dañar	son	soko-neru
+支	Soportar, soporte	shi	sasa-eru
+政	Política, gobierno, reglas	sei	matsurigoto
+故	Razón, causa	ko	yue
+敵	Enemigo, rival	teki	kataki
+断	Cortar, rechazar	dan	ta-tsu o kotowa-ru
+旧	Antiguo, viejos tiempos	kyū
+易	Fácil, sencillo	eki	yasa-shii
+暴	Violento, alboroto	bō	aba-ku
+条	Artículo, cláusula	jō
+枝	Rama, bifurcación	shi	eda
+査	Investigar	sa
+格	Estado	kaku
+桜	Cerezo	ō	sakura
+検	Examinar, analizar	ken
+構	Construir	kō	kama-eru
+武	Guerrero	bu o mu
+比	Comparar	hi	kura-beru
+永	Eterno, infinito	ei	naga-i
+河	Río	ga	kawa
+液	Líquido, fluido	eki
+混	Mezclar	kon	ma-zaru
+減	Disminuir	gen	he-ru
+測	Medida, medir	soku	haka-ru
+準	Semi-, asociado	jun
+演	Realizar, llevar a cabo	en
+潔	Puro, honrado	ketsu	isagiyo-i
+災	Desastre	sai	wazawa-i
+燃	Quemar	nen	mo-eru
+版	Edición, impreso	han
+犯	Crimen, delinquir	han	oka-su
+状	Estado, condición	jō
+独	Único, sólo, Alemania	doku	hito-ri
+率	Liderar	ritsu o sotsu	hiki-iru
+現	Aparecer	gen	arawa-reru
+留	Parar, detener	ryū ru	todo-maru
+略	Abreviación	ryaku
+益	Beneficio	eki
+眼	Ojo, vista	gan	me
+破	Dañar, romper	ha	yabu-ru
+確	Seguro, cierto	kaku	tashi-ka
+示	Mostrar, enseñar	shi	shime-su
+祖	Antepasado, fundador	so
+禁	Prohibición	kin
+移	Mudarse, trasladar	i	utsu-ru
+程	Grado, extensión	tei	hodo
+税	Impuesto	zei
+築	Construir, edificar	chiku	kizu-ku
+精	Refinar	sei
+素	Materia prima	su o so	moto
+経	Pasar, transcurrir	kei o kyō	he-ru
+統	Controlar, supervisar	tō	su-beru
+絶	Desaparecer, extinguir	zetsu	ta-tsu
+綿	Algodón	men	wata
+総	General, entero	sō
+編	Tejer	hen	a-mu
+績	Hilado, hilar	seki
+織	Tramar, tejer	shiki	o-ru
+罪	Delito, culpabilidad	zai	tsumi
+群	Manada	gun	mu-reru
+義	Moralidad, lealtad	gi
+耕	Labrar, arar	kō	tagaya-su
+職	Puesto, empleo	shoku
+肥	Engordar, fertilizar, abonar	hi	ko-yasu
+能	Habilidad, talento	nō
+興	Popularizar	kyō	oko-su
+舌	Lengua	zetsu	shita
+舎	Casa de campo	sha
+術	Arte, técnica	jutsu	sube
+衛	Defensa, protección	ei
+製	Fabricar, construir	sei
+複	Repetir, duplicar	fuku
+規	Compás, regla, medida, norma	ki
+解	Resolver, desatar	ge o kai	to-ku
+設	Crear, establecer	setsu	mouke-ru
+許	Permitir	kyo	yuru-su
+証	Evidencia	shō
+評	Criticar	hyō
+講	Discurso, conferencia	kō
+謝	Disculparse	sha	ayama-ru
+識	Distingir	shiki
+護	Proteger	go	mamo-ru
+豊	Abundancia	hō	yuta-ka
+財	Propiedad, dinero, riqueza	zai
+貧	Pobre	hin	mazushi-i
+責	Condenar, censurar	seki	se-meru
+貸	Prestar, alquilar	tai	ka-su
+貿	Comercio, intercambio	bō
+賀	Felicitaciones	ga
+資	Recursos, capital	shi
+賛	Admirar, alabar	san
+質	Contenido	shitsu
+輸	Transportar, trasladar	yu
+述	Mencionar, expresar	jutsu	no-beru
+迷	Perderse	mei	mayo-u
+退	Retroceder	tai	shirizo-ku
+逆	Reverso, inverso,	gyaku	sakara-u
+造	Crear, construir	zō	tsuku-ru
+過	Pasar, traspasar	ka	ayama-chi
+適	Adecuado	teki
+酸	Ácido, agrio	san
+鉱	Mineral	kō
+銅	Cobre	dō
+銭	Moneda, céntimo de yen	sen	zeni
+防	Defender, proteger	bō	fuse-gu
+限	Limitar, restringir	gen	kagi-ru
+険	Escarpado	ken	kewa-shii
+際	Límite, frontera, ocasión	sai	kiwa
+雑	Misceláneo, varios	zatsu
+非	Negativo, equivocado	hi	ara-zu
+預	Dejar o quedarse al cuidado	yo	azu-keru
+領	Control, punto clave	ryō
+額	Frente, cantidad de dinero	gaku	hitai
+飼	Criar, mantener, tener animales	shi	ka-u
+並	Alinear	hei	nami or nara-bu
+乱	Confundirse, desorientarse	ran	mida-reru
+乳	Leche	nyū	chichi
+亡	Desaparecer, huir	bō	na-kunaru
+仁	Humanidad, caridad	jin
+供	Ofrecer a, acompañante	kyō or ku	tomo
+俳	Haiku, actor	hai
+値	Precio, coste, valor	chi	atai
+傷	Herida, daño	shō	kizu
+優	Excelente	yū	yasa-shii
+党	Partido político	tō
+冊	Tomo, - nº de libros	satsu
+処	Lugar, ingeniárselas	sho
+刻	Esculpir, afilar, grabar	koku	kiza-mu
+割	Dividir, distribuir	katsu	wa-ru
+創	Fundar, comenzar	sō	tsuku-ru
+劇	Drama, obra de teatro	geki
+勤	Tarea, servir	kin	tsuto-meru
+危	Peligroso	ki	aya-ui
+卵	Huevo	ran	tamago
+厳	Solemne, estricto	gen	kibi-shii
+収	Obtener	shū	osa-meru
+后	Emperatriz	gō	kisaki
+否	Negativa	hi	ina o iya
+吸	Aspirar, chupar, fumar	kyū	su-u
+呼	Llamar	ko	yo-bu
+善	Bondad, virtud	zen	yo-i
+困	Hacer daño, sufrir	kon	koma-ru
+垂	Colgar	sui	ta-reru
+城	Castillo	jō	shiro
+域	Rango, región, límite	iki
+奏	Tocar un instrumento	sō	kana-deru
+奮	Mostrar habilidad	hun	huru-u
+姿	Figura, forma	shi	sugata
+存	Existir, proteger	son
+孝	Devoción filial	kō
+宅	Hogar	taku	ie
+宇	Edificio grande, cielo	u
+宗	Enseñaza religiosa	shū	sō
+宙	Espacio	chū
+宝	Tesoro	hō	takara
+宣	Proclamar, anunciar	sen	notama-u
+密	Denso	mitsu
+寸	Longitud, medida	sun
+専	Totalmente, especialmente	sen	moppa-ra
+射	Disparar	sha	i-ru
+将	Líder, cargo	shō
+尊	Apreciar, valorar	son	touto-bu
+就	Llegar al trabajo, realizar	shū	tsu-ku
+尺	Regla, medida	shaku
+届	Alcanzar, llegar		todo-ku
+展	Desplegar, expandir	ten
+層	Estrato, nivel	sō
+己	Uno mismo	ko	onore
+巻	Enrollar, rollo	kan	ma-ku
+幕	Cortina	maku o baku
+干	Airear, secar	kan	ho-su
+幼	Infantil	yō	osana-i
+庁	Oficina gobierno	chō
+座	Sentarse	za	suwa-ru
+延	Prolongar, alargar	en	no-basu
+律	Ley, regla, ritmo musical	ritsu
+従	Seguir, obedecer	jū	shitaga-u
+忘	Olvidar	bō	wasu-reru
+忠	Lealtad	chū
+憲	Regulación, ley	ken
+我	Yo, uno mismo, ego	ga	ware
+批	Criticar	hi
+担	Cargar, transportar	tan	nina-u
+拝	Culto, adorar	hai	oga-mu
+拡	Ensanchar, expandir	kaku	hiro-geru
+捨	Tirar, arrojar	sha	su-teru
+探	Buscar, explorar	tan	saga-su
+推	Presionar	sui
+揮	Manejar, ejercer	ki
+操	Manipular, castidad	sō	ayatsu-ru
+敬	Respeto, mostrar respero	kei	uyama-u
+映	Reflejo, proyección	ei	utsu-ru
+晩	Tarde, noche, anochecer	ban
+暖	Templado, cálido	dan	atata-kai
+暮	Anochecer, oscurecer	bo	ku-rasu
+朗	Sonoro, melódico	rō	hoga-raka
+机	Mesa, escritorio	ki	tsukue
+枚	- nº de objetos planos	mai
+染	Tinte, teñir	sen	so-meru
+株	Tocón, raíz, acciones de bolsa	kabu
+棒	Barra, vara	bō
+模	Patrón, modelo, molde	mo or bo
+権	Derechos	ken
+樹	Árbol, vegetación	ju	ki
+欲	Querer, desear	yoku	ho-shii
+段	Escalón, paso	dan
+沿	Bordear, seguir a lo largo de	en	so-u
+泉	Manantial, fuente	sen	izumi
+洗	Lavar, limpiar	sen	ara-u
+派	Grupo, división	ha
+済	Terminar, rescatar	sai	su-mu
+源	Fuente, origen	gen	minamoto
+潮	Agua de mar	chō	shio
+激	Violento, furioso	geki	hage-shii
+灰	Ceniza	kai	hai
+熟	Madurar	juku	u-reru
+片	Trozo	hen	kata
+班	Grupo	han
+異	Raro, extraño	i	koto-naru
+疑	Dudar, desconfiar	gi	utaga-u
+痛	Dolor, daño	tsū	ita-i
+皇	Emperador	kō	ō
+盛	Auge, prosperidad, prosperar	sei	mo-ru
+盟	Juramento, promesa	mei
+看	Ver, vigilar, cuidar	kan
+砂	Arena, graa	sa or sha	suna
+磁	Imán, porcelana	ji
+私	Yo	shi	watakushi o watashi
+秘	Secreto, esconder	hi
+穀	Cereales	koku
+穴	Agujero	ketsu	ana
+窓	Ventana	sō	mado
+筋	Músculo, tendón	kin	suji
+策	Esquema, plan	saku
+簡	Simple, breve	kan
+糖	Azúcar	tō
+系	Sistema, conexión	kei
+紅	Carmesí, rojo fuerte	kō	beni o kurenai
+納	Pagar, entregar	nō	osa-meru
+純	Puro, genuino	jun
+絹	Seda	ken	kinu
+縦	Vertical	ju	tate
+縮	Encoger, reducir	shuku	chidi-mu
+署	Cargo, puesto	sho
+翌	Siguiente, después	yoku
+聖	Santo, sagrado	sei
+肺	Pulmones	hai
+背	Espalda, estatura	hai	se
+胸	Pecho	kyō	mune
+脳	Cerebro, sesos, intelecto	nō
+腹	Barriga, estómago	fuku	hara
+臓	Entrañas, víceras	zō
+臨	Enfrentarte	rin	nozo-mu
+至	Llegar, alcanzar	shi	ita-ru
+若	Joven	jaku	waka-i
+著	Expresar, publicar	cho	arawa-su o ichijiru-shii
+蒸	Vapor	jō	mu-su
+蔵	Almacén	zō	kura
+蚕	Gusano de seda	san	kaiko
+衆	Multitud, masas	shū
+裁	Cortar (tela, papel), juzgar	sai	saba-ku
+装	Decorar, vestirse	sō or shō	yosoo-u
+裏	Reverso, opuesto	ri	ura
+補	Compensar	ho	ogina-u
+視	Inspeccionar	shi	mi-ru
+覧	Ver, mirar	ran
+討	Atacar, vengar	tō	u-tsu
+訪	Visitar	hō	otozu-reru
+訳	Traducir, razón	yaku	wake
+詞	Poesía, palabra	shi	kotoba
+誌	Documento escrito	shi
+認	Reconocer	nin	mito-meru
+誕	Nacimiento	tan
+誠	Sinceridad, verdad	sei	makoto
+誤	Error, equivocarse	go	ayama-ru
+論	Teoría	ron
+諸	Diversos, varios	sho	moro
+警	Amonestar, advertir	kei
+貴	Valioso, precioso	ki
+賃	Salario, sueldo	chin
+遺	Olvidar, dejar en herencia	i
+郵	Correo	yū
+郷	Ciudad natal, pueblo	kyō	gō
+針	Aguja, alfiler	shin	hari
+鋼	Acero	kō	hagane
+閉	Cerrar	hei	shi-meru
+閣	Torre, edificio alto	kaku
+降	Caer, bajar	kō	o-riru
+陛	Alteza, emperador, emperatriz	hei
+除	Eliminar, quitar	jo o ji	nozo-ku
+障	Estorbar	shō	sawa-ru
+難	Difícil, imposible	nan	muzuka-shii
+革	Cuero	kaku	kawa
+頂	Cumbre, comer y beber [humilde]	chō	itada-ku
+骨	Hueso	kotsu	hone
