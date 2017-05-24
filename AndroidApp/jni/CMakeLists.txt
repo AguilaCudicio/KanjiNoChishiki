@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-project(TENSORFLOW_DEMO)
+project(KANJI)
 cmake_minimum_required(VERSION 3.4.1)
 
 set(CMAKE_VERBOSE_MAKEFILE on)
@@ -35,14 +35,14 @@ set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} \
                               -Wl,--allow-multiple-definition \
                               -Wl,--whole-archive -fPIE -v")
 
-file(GLOB_RECURSE tensorflow_demo_sources ${SAMPLE_SRC_DIR}/jni/*.*)
-add_library(tensorflow_demo SHARED
+file(GLOB_RECURSE kanji_sources ${SAMPLE_SRC_DIR}/jni/*.*)
+add_library(kanji SHARED
             ${tensorflow_demo_sources})
-target_include_directories(tensorflow_demo PRIVATE
+target_include_directories(kanji PRIVATE
                            ${TF_SRC_ROOT}
                            ${CMAKE_SOURCE_DIR})
 
-target_link_libraries(tensorflow_demo
+target_link_libraries(kanji
                       android
                       log
                       jnigraphics

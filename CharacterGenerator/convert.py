@@ -9,7 +9,7 @@ filestraining = glob.glob(r'filea/*')
 # Dataset generated to evaluate the network performance
 fileseval = glob.glob(r'fileb/*')
 # Dataset generated to test the network with a single character
-filesingle = glob.glob(r'fileb/0987_988_Hannari.otf_fs_27_bc_245a.png')
+filesingle = glob.glob(r'filea/00000.png')
 
 
 def generate_array(inputdir,outputfile):
@@ -44,5 +44,5 @@ def generate_array(inputdir,outputfile):
 	
 #There lines should be commented if you don't want to generate every file
 #generate_array(filestraining,"training.bin")
-generate_array(fileseval,"verify.bin")
-#generate_array(filesingle,"single.bin")
+#generate_array(fileseval,"verify.bin")
+generate_array(filesingle,"single.bin")

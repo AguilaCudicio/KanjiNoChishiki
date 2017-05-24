@@ -13,7 +13,7 @@ tf.app.flags.DEFINE_string('checkpoint_dir', '/tmp/kanji_train',
 # Freeze the graph
 input_graph_path =  os.path.join(FLAGS.checkpoint_dir, 'model.pbtxt')
 # Remember to change this number according to the highest step.
-checkpoint_path = os.path.join(FLAGS.checkpoint_dir, 'model.ckpt-2000')
+checkpoint_path = os.path.join(FLAGS.checkpoint_dir, 'model.ckpt-80000')
 input_saver_def_path = ""
 input_binary = False
 output_node_names = "softmax_linear/softmax_linear"

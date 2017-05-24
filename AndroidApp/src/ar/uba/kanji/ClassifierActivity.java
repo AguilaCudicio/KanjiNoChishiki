@@ -44,10 +44,10 @@ public class ClassifierActivity extends CameraActivity implements OnImageAvailab
   // --output_node_names="final_result" \
   // --input_binary=true
   private static final int INPUT_SIZE = 32;
-  private static final int IMAGE_MEAN = 12;
+  private static final int IMAGE_MEAN = 0;
   private static final float IMAGE_STD = 1;
-  private static final String INPUT_NAME = "Inputs";
-  private static final String OUTPUT_NAME = "softmax_linear/softmax_linear";
+  private static final String INPUT_NAME = "InputI";
+  private static final String OUTPUT_NAME = "finalresult";
 
   private static final String MODEL_FILE = "file:///android_asset/optimizedmodel.pb";
   private static final String LABEL_FILE =
