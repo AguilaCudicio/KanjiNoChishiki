@@ -92,8 +92,6 @@ def train():
       if step % 1000 == 0 or (step + 1) == FLAGS.max_steps:
         checkpoint_path = os.path.join(FLAGS.train_dir, 'model.ckpt')
         saver.save(sess, checkpoint_path, global_step=step)
-        # save the graph
-        tf.train.write_graph(sess.graph_def, FLAGS.train_dir, 'model.pbtxt')  
 
 
 def main(argv=None):
