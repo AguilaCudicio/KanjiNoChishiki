@@ -6,12 +6,24 @@
 from PIL import Image  
 from PIL import ImageDraw  
 from PIL import ImageFont  
+
+# Import font utils
+from fontTools.ttLib import TTFont
   
 # Import operating system lib  
 import os  
   
 # Import random generator  
 from random import randint  
+
+#-------------------------------- Utils ------------------------------#  
+
+def charInFont(unicode_char, font):
+    for cmap in font['cmap'].tables:
+        if cmap.isUnicode():
+            if ord(unicode_char) in cmap.cmap:
+                return True
+    return False
   
 #-------------------------------- Cleanup ------------------------------#  
                       
@@ -62,65 +74,67 @@ def GenerateCharacters():
             # For each character do  
             for char in characterslist:
                 charnum = charnum + 1
-                # For each font size do  
-                for font_size in font_sizes:  
-                   if font_size > 0:  
-                    # For each background color do  
-                    for background_color in background_colors:  
+				#Does the character exist in this font?
+                if charInFont(char, TTFont(font_resource_file)):
+                    # For each font size do  
+                    for font_size in font_sizes:  
+                       if font_size > 0:  
+                         # For each background color do  
+                         for background_color in background_colors:  
 
-                       character = char
-              
-                       # Create character image :   
-                       # Grayscale, image size, background color  
-                       char_image = Image.new('L', (image_size, image_size), background_color)  
-              
-                       # Draw character image  
-                       draw = ImageDraw.Draw(char_image)  
-              
-                       # Specify font : Resource file, font size  
-                       font =  ImageFont.truetype(font_resource_file, font_size)  
-              
-                       # Get character width and height  
-                       (font_width, font_height) = font.getsize(character)  
-              
-                       # Calculate x position  
-                       x = (image_size - font_width)/2  
-              
-                       # Calculate y position  
-                       y = (image_size - font_height)/2  
-              
-                       # Draw text : Position, String,   
-                       # Options = Fill color, Font  
-                       draw.text((x, y), character, (245-background_color) + randint(0, 10) , font=font)  
-					   
-					   
-                       if (filenum > (len(filenames)/3.0) ):
-                                            out_dir = out_dir1
-                       else :
-                                            out_dir = out_dir2
-                      
-                       # Final file name                      
-                       file_name = out_dir + format(charnum, '04d') + '_' + str(k) + '_' + filename + '_fs_' + str(font_size) + '_bc_' + str(background_color) + '.png'
-                       file_namea = out_dir + format(charnum, '04d') + '_' + str(k) + '_' + filename + '_fs_' + str(font_size) + '_bc_' + str(background_color) + 'a.png'
-                       file_nameb = out_dir + format(charnum, '04d') + '_' + str(k) + '_' + filename + '_fs_' + str(font_size) + '_bc_' + str(background_color) + 'b.png'  
+                            character = char
+				  
+                            # Create character image :   
+                            # Grayscale, image size, background color  
+                            char_image = Image.new('L', (image_size, image_size), background_color)  
+				  
+                            # Draw character image  
+                            draw = ImageDraw.Draw(char_image)  
+				  
+                            # Specify font : Resource file, font size  
+                            font =  ImageFont.truetype(font_resource_file, font_size)  
+				  
+                            # Get character width and height  
+                            (font_width, font_height) = font.getsize(character)  
+				  
+                            # Calculate x position  
+                            x = (image_size - font_width)/2  
+				  
+                            # Calculate y position  
+                            y = (image_size - font_height)/2  
+				  
+                            # Draw text : Position, String,   
+                            # Options = Fill color, Font  
+                            draw.text((x, y), character, (245-background_color) + randint(0, 10) , font=font)  
+						   
+						   
+                            if (filenum > (len(filenames)/3.0) ):
+                                                out_dir = out_dir1
+                            else :
+                                                out_dir = out_dir2
+						  
+                            # Final file name                      
+                            file_name = out_dir + format(charnum, '04d') + '_' + str(k) + '_' + filename + '_fs_' + str(font_size) + '_bc_' + str(background_color) + '.png'
+                            file_namea = out_dir + format(charnum, '04d') + '_' + str(k) + '_' + filename + '_fs_' + str(font_size) + '_bc_' + str(background_color) + 'a.png'
+                            file_nameb = out_dir + format(charnum, '04d') + '_' + str(k) + '_' + filename + '_fs_' + str(font_size) + '_bc_' + str(background_color) + 'b.png'  
 
-                       # Save image  
-                       char_image.save(file_name)
+                            # Save image  
+                            char_image.save(file_name)
 
-                       im2 = char_image.convert('RGBA')
+                            im2 = char_image.convert('RGBA')
 
-                       # Save image rotated
-                       rot1= im2.rotate(5)
-                       fff = Image.new('RGBA', rot1.size, (255,)*4)
-                       out = Image.composite(rot1, fff, rot1)
-                       out.convert(im2.mode).save(file_namea)
-                       
-                       rot2= im2.rotate(-5)
-                       out2 = Image.composite(rot2, fff, rot2)
-                       out2.convert(im2.mode).save(file_nameb)
-                      
-                       # Increment counter  
-                       k = k + 1
+                            # Save image rotated
+                            rot1= im2.rotate(5)
+                            fff = Image.new('RGBA', rot1.size, (255,)*4)
+                            out = Image.composite(rot1, fff, rot1)
+                            out.convert(im2.mode).save(file_namea)
+						   
+                            rot2= im2.rotate(-5)
+                            out2 = Image.composite(rot2, fff, rot2)
+                            out2.convert(im2.mode).save(file_nameb)
+						  
+                            # Increment counter  
+                            k = k + 1
                        
     return  
   
