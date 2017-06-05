@@ -16,6 +16,8 @@ import android.os.Trace;
 import android.util.Size;
 import android.util.TypedValue;
 import android.view.Display;
+import android.view.View;
+
 import java.util.List;
 import java.util.Vector;
 import  ar.uba.kanji.OverlayView.DrawCallback;
@@ -204,23 +206,22 @@ public class ClassifierActivity extends CameraActivity implements OnImageAvailab
     if (SAVE_PREVIEW_BITMAP) {
       ImageUtils.saveBitmap(croppedBitmap);
     }
-
     runInBackground(
-        new Runnable() {
-          @Override
-          public void run() {
-            final long startTime = SystemClock.uptimeMillis();
-            final List<Classifier.Recognition> results = classifier.recognizeImage(croppedBitmap);
-            lastProcessingTimeMs = SystemClock.uptimeMillis() - startTime;
-
-            cropCopyBitmap = Bitmap.createBitmap(croppedBitmap);
-            resultsView.setResults(results);
-            requestRender();
-            computing = false;
-          }
-        });
-
+            new Runnable() {
+              @Override
+              public void run() {
+                cropCopyBitmap = Bitmap.createBitmap(croppedBitmap);
+                requestRender();
+                computing = false;
+              }
+            });
     Trace.endSection();
+  }
+
+  public void screenTapped(View view) {
+       final List<Classifier.Recognition> results = classifier.recognizeImage(croppedBitmap);
+       resultsView.setResults(results);
+       requestRender();
   }
 
   @Override
