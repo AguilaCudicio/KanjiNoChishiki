@@ -10,7 +10,16 @@ discard = ["0","1","2","3","4","5","6","7","8","9","A","B","C","D","E","F","G","
 "a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q",
 "r","s","t","u","v","w","x","y","z","{"]
 "In the file, S indicates stroke count, G grade and J JLPT level"
-for line in f:
+
+kanjiFields= ["symbol","strokes","grade","jlpt","readings","meanings"]
+wr = csv.writer(newfile, quoting=csv.QUOTE_ALL)
+wr.writerow(kanjiFields)
+
+
+for i, line in enumerate(f):
+	"Solo leer 6000 kanjis... modificar si se quieren más, o menos"
+	if i > 6000:
+        	break
 	line= line.rstrip()
 	readings = []
 	meanings = re.findall('\{.*?\}',line)
@@ -20,7 +29,7 @@ for line in f:
 	elementlist = line.split(" ")
 	for element in elementlist[2:]:
 		if element[0] == 'S':
-			stroke = element[1:]
+			strokeCount = element[1:]
 		elif element[0] == 'G':
 			grade = element[1:]
 		elif element[0] == 'J':
