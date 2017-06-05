@@ -17,8 +17,8 @@ wr.writerow(kanjiFields)
 
 
 for i, line in enumerate(f):
-	"Solo leer 6000 kanjis... modificar si se quieren más, o menos"
-	if i > 6000:
+	"Solo leer 6355 kanjis (EDICT 1)... modificar si se quieren más, o menos"
+	if i > 6354:
         	break
 	line= line.rstrip()
 	readings = []
