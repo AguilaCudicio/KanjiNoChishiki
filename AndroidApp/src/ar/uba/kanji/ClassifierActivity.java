@@ -1,6 +1,8 @@
 
 package ar.uba.kanji;
 
+import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Bitmap.Config;
 import android.graphics.Canvas;
@@ -11,13 +13,22 @@ import android.media.Image;
 import android.media.Image.Plane;
 import android.media.ImageReader;
 import android.media.ImageReader.OnImageAvailableListener;
+import android.net.Uri;
 import android.os.SystemClock;
 import android.os.Trace;
+import android.provider.MediaStore;
+import android.util.Log;
 import android.util.Size;
 import android.util.TypedValue;
 import android.view.Display;
 import android.view.View;
 
+import com.theartofdev.edmodo.cropper.CropImage;
+import com.theartofdev.edmodo.cropper.CropImageView;
+
+import java.io.ByteArrayOutputStream;
+import java.io.FileOutputStream;
+import java.io.InputStream;
 import java.util.List;
 import java.util.Vector;
 import  ar.uba.kanji.OverlayView.DrawCallback;
@@ -218,10 +229,51 @@ public class ClassifierActivity extends CameraActivity implements OnImageAvailab
     Trace.endSection();
   }
 
+
+  public Uri getImageUri(Context inContext, Bitmap inImage) {
+    ByteArrayOutputStream bytes = new ByteArrayOutputStream();
+    inImage.compress(Bitmap.CompressFormat.JPEG, 100, bytes);
+    String path = MediaStore.Images.Media.insertImage(inContext.getContentResolver(), inImage, "Title", null);
+    return Uri.parse(path);
+  }
+
   public void screenTapped(View view) {
-       final List<Classifier.Recognition> results = classifier.recognizeImage(croppedBitmap);
-       resultsView.setResults(results);
-       requestRender();
+    CropImage.activity(getImageUri(this.getApplicationContext(),rgbFrameBitmap))
+            .setGuidelines(CropImageView.Guidelines.ON)
+            .start(this);
+
+
+  }
+
+  @Override
+  public void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+    if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE) {
+      CropImage.ActivityResult result = CropImage.getActivityResult(data);
+      if (resultCode == RESULT_OK) {
+        Uri resultUri = result.getUri();
+        try {
+          Bitmap cBitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), resultUri);
+
+
+          Bitmap read = Bitmap.createScaledBitmap(cBitmap, INPUT_SIZE, INPUT_SIZE, false);
+          final List<Classifier.Recognition> results = classifier.recognizeImage(read);
+          resultsView.setResults(results);
+          requestRender();
+
+
+        }
+        catch (Exception e) {
+          Log.v("OMG","excepcion");
+        }
+
+
+
+      } else if (resultCode == CropImage.CROP_IMAGE_ACTIVITY_RESULT_ERROR_CODE) {
+        Exception error = result.getError();
+        Log.v("OMG","no hay crop image!");
+      }
+    }
   }
 
   @Override
