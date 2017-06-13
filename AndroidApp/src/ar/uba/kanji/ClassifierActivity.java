@@ -34,9 +34,6 @@ public class ClassifierActivity extends CameraActivity implements OnImageAvailab
 
   private static final int INPUT_SIZE = 32;
 
-  private static final boolean SAVE_PREVIEW_BITMAP = false;
-
-  private static final boolean MAINTAIN_ASPECT = true;
 
   private static final Size DESIRED_PREVIEW_SIZE = new Size(640, 480);
 
@@ -47,14 +44,9 @@ public class ClassifierActivity extends CameraActivity implements OnImageAvailab
   private byte[][] yuvBytes;
   private int[] rgbBytes = null;
   private Bitmap rgbFrameBitmap = null;
-  private Bitmap croppedBitmap = null;
-
-  private Bitmap cropCopyBitmap;
 
   private boolean computing = false;
 
-  private Matrix frameToCropTransform;
-  private Matrix cropToFrameTransform;
 
 
   private BorderedText borderedText;
@@ -94,17 +86,6 @@ public class ClassifierActivity extends CameraActivity implements OnImageAvailab
     LOGGER.i("Initializing at size %dx%d", previewWidth, previewHeight);
     rgbBytes = new int[previewWidth * previewHeight];
     rgbFrameBitmap = Bitmap.createBitmap(previewWidth, previewHeight, Config.ARGB_8888);
-    croppedBitmap = Bitmap.createBitmap(INPUT_SIZE, INPUT_SIZE, Config.ARGB_8888);
-
-    frameToCropTransform =
-        ImageUtils.getTransformationMatrix(
-            previewWidth, previewHeight,
-            INPUT_SIZE, INPUT_SIZE,
-            sensorOrientation, MAINTAIN_ASPECT);
-
-    cropToFrameTransform = new Matrix();
-    frameToCropTransform.invert(cropToFrameTransform);
-
     yuvBytes = new byte[3][];
   }
 
@@ -152,18 +133,11 @@ public class ClassifierActivity extends CameraActivity implements OnImageAvailab
     }
 
     rgbFrameBitmap.setPixels(rgbBytes, 0, previewWidth, 0, 0, previewWidth, previewHeight);
-    final Canvas canvas = new Canvas(croppedBitmap);
-    canvas.drawBitmap(rgbFrameBitmap, frameToCropTransform, null);
 
-    // For examining the actual TF input.
-    if (SAVE_PREVIEW_BITMAP) {
-      ImageUtils.saveBitmap(croppedBitmap);
-    }
     runInBackground(
             new Runnable() {
               @Override
               public void run() {
-                cropCopyBitmap = Bitmap.createBitmap(croppedBitmap);
                 computing = false;
               }
             });
@@ -178,7 +152,13 @@ public class ClassifierActivity extends CameraActivity implements OnImageAvailab
   }
 
   public void screenTapped(View view) {
-    CropImage.activity(getImageUri(this.getApplicationContext(),rgbFrameBitmap))
+    Matrix matrix = new Matrix();
+
+    matrix.postRotate(sensorOrientation);
+
+    Bitmap rotatedBitmap = Bitmap.createBitmap(rgbFrameBitmap , 0, 0, rgbFrameBitmap .getWidth(), rgbFrameBitmap.getHeight(), matrix, true);
+
+    CropImage.activity(getImageUri(this.getApplicationContext(),rotatedBitmap))
             .setGuidelines(CropImageView.Guidelines.ON)
             .start(this);
 

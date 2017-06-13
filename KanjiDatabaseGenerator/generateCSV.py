@@ -38,7 +38,7 @@ def writeJouyouKanji(file,output):
 		"If this character is grade 8 or below, it's classified as Jouyou Kanji"
 		"We discard grade 0 kanji as they are not classified, therefore not Jouyou"
 		if float(kanjiInfoList[2]) > 0 and float(kanjiInfoList[2]) < 9 :
-			wr = csv.writer(output, quoting=csv.QUOTE_ALL)
+			wr = csv.writer(output)
 			wr.writerow(kanjiInfoList)
 
 def writeAdvancedKanji(file,output):
@@ -49,7 +49,7 @@ def writeAdvancedKanji(file,output):
 		"If this character is grade 9 or above, it isn't classified as Jouyou Kanji"
 		"We also need grade 0 kanji, since those are not classified"
 		if float(kanjiInfoList[2]) == 0 or float(kanjiInfoList[2]) > 8 :
-			wr = csv.writer(output, quoting=csv.QUOTE_ALL)
+			wr = csv.writer(output)
 			wr.writerow(kanjiInfoList)
 
 
@@ -64,7 +64,7 @@ discard = ["0","1","2","3","4","5","6","7","8","9","A","B","C","D","E","F","G","
 "In the dictionary, S indicates stroke count, G grade and J JLPT level"
 
 kanjiFields= ["symbol","strokes","grade","jlpt","readings","meanings"]
-wr = csv.writer(newfile, quoting=csv.QUOTE_ALL)
+wr = csv.writer(newfile)
 wr.writerow(kanjiFields)
 "Let's write Jouyou kanji first. It sould write 2135 lines"
 writeJouyouKanji(f,newfile)
