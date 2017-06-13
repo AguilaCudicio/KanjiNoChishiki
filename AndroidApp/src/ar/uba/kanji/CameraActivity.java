@@ -26,15 +26,11 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.HandlerThread;
-import android.os.PersistableBundle;
-import android.provider.SyncStateContract;
 import android.util.Size;
-import android.view.KeyEvent;
 import android.view.WindowManager;
 import android.widget.Toast;
 import java.nio.ByteBuffer;
 import ar.uba.kanji.env.Logger;
-import ar.uba.kanji.R;
 
 public abstract class CameraActivity extends Activity implements OnImageAvailableListener {
   private static final Logger LOGGER = new Logger();
@@ -44,8 +40,6 @@ public abstract class CameraActivity extends Activity implements OnImageAvailabl
   private static final String PERMISSION_CAMERA = Manifest.permission.CAMERA;
   private static final String PERMISSION_STORAGE = Manifest.permission.WRITE_EXTERNAL_STORAGE;
   private static final String PERMISSION_READ = Manifest.permission.READ_EXTERNAL_STORAGE;
-
-  private boolean debug = false;
 
   private Handler handler;
   private HandlerThread handlerThread;
