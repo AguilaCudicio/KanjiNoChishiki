@@ -34,6 +34,11 @@
             android:name="android.support.PARENT_ACTIVITY"
             android:value="ClassifierActivity" />
          </activity>
+        <activity android:name="ar.uba.kanji.ClassifyImageActivity" android:parentActivityName="ar.uba.kanji.ClassifierActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="ClassifierActivity" />
+        </activity>
 
 
     </application>

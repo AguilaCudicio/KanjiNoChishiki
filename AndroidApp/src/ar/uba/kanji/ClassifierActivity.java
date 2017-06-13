@@ -7,15 +7,12 @@ import android.graphics.Bitmap;
 import android.graphics.Bitmap.Config;
 import android.graphics.Canvas;
 import android.graphics.Matrix;
-import android.graphics.Paint;
 import android.graphics.Typeface;
 import android.media.Image;
 import android.media.Image.Plane;
 import android.media.ImageReader;
 import android.media.ImageReader.OnImageAvailableListener;
 import android.net.Uri;
-import android.os.SystemClock;
-import android.os.Trace;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.util.Size;
@@ -27,52 +24,21 @@ import com.theartofdev.edmodo.cropper.CropImage;
 import com.theartofdev.edmodo.cropper.CropImageView;
 
 import java.io.ByteArrayOutputStream;
-import java.io.FileOutputStream;
-import java.io.InputStream;
-import java.util.List;
-import java.util.Vector;
-import  ar.uba.kanji.OverlayView.DrawCallback;
 import ar.uba.kanji.env.BorderedText;
 import ar.uba.kanji.env.ImageUtils;
 import ar.uba.kanji.env.Logger;
-import ar.uba.kanji.R;
 
 public class ClassifierActivity extends CameraActivity implements OnImageAvailableListener {
   private static final Logger LOGGER = new Logger();
 
-  // These are the settings for the original v1 Inception model. If you want to
-  // use a model that's been produced from the TensorFlow for Poets codelab,
-  // you'll need to set IMAGE_SIZE = 299, IMAGE_MEAN = 128, IMAGE_STD = 128,
-  // INPUT_NAME = "Mul", and OUTPUT_NAME = "final_result".
-  // You'll also need to update the MODEL_FILE and LABEL_FILE paths to point to
-  // the ones you produced.
-  //
-  // To use v3 Inception model, strip the DecodeJpeg Op from your retrained
-  // model first:
-  //
-  // python strip_unused.py \
-  // --input_graph=<retrained-pb-file> \
-  // --output_graph=<your-stripped-pb-file> \
-  // --input_node_names="Mul" \
-  // --output_node_names="final_result" \
-  // --input_binary=true
-  private static final int INPUT_SIZE = 32;
-  private static final int IMAGE_MEAN = 0;
-  private static final float IMAGE_STD = 1;
-  private static final String INPUT_NAME = "InputI";
-  private static final String OUTPUT_NAME = "finalresult";
 
-  private static final String MODEL_FILE = "file:///android_asset/optimizedmodel.pb";
-  private static final String LABEL_FILE =
-      "file:///android_asset/lista.txt";
+  private static final int INPUT_SIZE = 32;
 
   private static final boolean SAVE_PREVIEW_BITMAP = false;
 
   private static final boolean MAINTAIN_ASPECT = true;
 
   private static final Size DESIRED_PREVIEW_SIZE = new Size(640, 480);
-
-  private Classifier classifier;
 
   private Integer sensorOrientation;
 
@@ -90,11 +56,9 @@ public class ClassifierActivity extends CameraActivity implements OnImageAvailab
   private Matrix frameToCropTransform;
   private Matrix cropToFrameTransform;
 
-  private ResultsView resultsView;
 
   private BorderedText borderedText;
 
-  private long lastProcessingTimeMs;
 
   @Override
   protected int getLayoutId() {
@@ -116,18 +80,7 @@ public class ClassifierActivity extends CameraActivity implements OnImageAvailab
     borderedText = new BorderedText(textSizePx);
     borderedText.setTypeface(Typeface.MONOSPACE);
 
-    classifier =
-        TensorFlowImageClassifier.create(
-            getAssets(),
-            MODEL_FILE,
-            LABEL_FILE,
-            INPUT_SIZE,
-            IMAGE_MEAN,
-            IMAGE_STD,
-            INPUT_NAME,
-            OUTPUT_NAME);
 
-    resultsView = (ResultsView) findViewById(R.id.results);
     previewWidth = size.getWidth();
     previewHeight = size.getHeight();
 
@@ -153,14 +106,6 @@ public class ClassifierActivity extends CameraActivity implements OnImageAvailab
     frameToCropTransform.invert(cropToFrameTransform);
 
     yuvBytes = new byte[3][];
-
-    addCallback(
-        new DrawCallback() {
-          @Override
-          public void drawCallback(final Canvas canvas) {
-            renderDebug(canvas);
-          }
-        });
   }
 
   @Override
@@ -179,8 +124,6 @@ public class ClassifierActivity extends CameraActivity implements OnImageAvailab
         return;
       }
       computing = true;
-
-      Trace.beginSection("imageAvailable");
 
       final Plane[] planes = image.getPlanes();
       fillBytes(planes, yuvBytes);
@@ -205,7 +148,6 @@ public class ClassifierActivity extends CameraActivity implements OnImageAvailab
         image.close();
       }
       LOGGER.e(e, "Exception!");
-      Trace.endSection();
       return;
     }
 
@@ -222,11 +164,9 @@ public class ClassifierActivity extends CameraActivity implements OnImageAvailab
               @Override
               public void run() {
                 cropCopyBitmap = Bitmap.createBitmap(croppedBitmap);
-                requestRender();
                 computing = false;
               }
             });
-    Trace.endSection();
   }
 
 
@@ -252,22 +192,9 @@ public class ClassifierActivity extends CameraActivity implements OnImageAvailab
       CropImage.ActivityResult result = CropImage.getActivityResult(data);
       if (resultCode == RESULT_OK) {
         Uri resultUri = result.getUri();
-        try {
-          Bitmap cBitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), resultUri);
-
-
-          Bitmap read = Bitmap.createScaledBitmap(cBitmap, INPUT_SIZE, INPUT_SIZE, false);
-          final List<Classifier.Recognition> results = classifier.recognizeImage(read);
-          resultsView.setResults(results);
-          requestRender();
-
-
-        }
-        catch (Exception e) {
-          Log.v("OMG","excepcion");
-        }
-
-
+        Intent intent = new Intent(this, ClassifyImageActivity.class);
+        intent.putExtra("imageUri", resultUri.toString());
+        startActivity(intent);
 
       } else if (resultCode == CropImage.CROP_IMAGE_ACTIVITY_RESULT_ERROR_CODE) {
         Exception error = result.getError();
@@ -276,41 +203,4 @@ public class ClassifierActivity extends CameraActivity implements OnImageAvailab
     }
   }
 
-  @Override
-  public void onSetDebug(boolean debug) {
-    classifier.enableStatLogging(debug);
-  }
-
-  private void renderDebug(final Canvas canvas) {
-    if (!isDebug()) {
-      return;
-    }
-    final Bitmap copy = cropCopyBitmap;
-    if (copy != null) {
-      final Matrix matrix = new Matrix();
-      final float scaleFactor = 2;
-      matrix.postScale(scaleFactor, scaleFactor);
-      matrix.postTranslate(
-          canvas.getWidth() - copy.getWidth() * scaleFactor,
-          canvas.getHeight() - copy.getHeight() * scaleFactor);
-      canvas.drawBitmap(copy, matrix, new Paint());
-
-      final Vector<String> lines = new Vector<String>();
-      if (classifier != null) {
-        String statString = classifier.getStatString();
-        String[] statLines = statString.split("\n");
-        for (String line : statLines) {
-          lines.add(line);
-        }
-      }
-
-      lines.add("Frame: " + previewWidth + "x" + previewHeight);
-      lines.add("Crop: " + copy.getWidth() + "x" + copy.getHeight());
-      lines.add("View: " + canvas.getWidth() + "x" + canvas.getHeight());
-      lines.add("Rotation: " + sensorOrientation);
-      lines.add("Inference time: " + lastProcessingTimeMs + "ms");
-
-      borderedText.drawLines(canvas, 10, canvas.getHeight() - 10, lines);
-    }
-  }
 }
