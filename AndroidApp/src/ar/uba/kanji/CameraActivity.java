@@ -27,12 +27,10 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.HandlerThread;
 import android.util.Size;
-import android.view.KeyEvent;
 import android.view.WindowManager;
 import android.widget.Toast;
 import java.nio.ByteBuffer;
 import ar.uba.kanji.env.Logger;
-import ar.uba.kanji.R;
 
 public abstract class CameraActivity extends Activity implements OnImageAvailableListener {
   private static final Logger LOGGER = new Logger();
@@ -41,16 +39,15 @@ public abstract class CameraActivity extends Activity implements OnImageAvailabl
 
   private static final String PERMISSION_CAMERA = Manifest.permission.CAMERA;
   private static final String PERMISSION_STORAGE = Manifest.permission.WRITE_EXTERNAL_STORAGE;
-
-  private boolean debug = false;
+  private static final String PERMISSION_READ = Manifest.permission.READ_EXTERNAL_STORAGE;
 
   private Handler handler;
   private HandlerThread handlerThread;
 
   @Override
-  protected void onCreate(final Bundle savedInstanceState) {
+  public void onCreate(final Bundle savedInstanceState) {
     LOGGER.d("onCreate " + this);
-    super.onCreate(null);
+    super.onCreate(savedInstanceState);
     getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
     setContentView(R.layout.activity_camera);
@@ -80,21 +77,7 @@ public abstract class CameraActivity extends Activity implements OnImageAvailabl
 
   @Override
   public synchronized void onPause() {
-    LOGGER.d("onPause " + this);
 
-    if (!isFinishing()) {
-      LOGGER.d("Requesting finish");
-      finish();
-    }
-
-    handlerThread.quitSafely();
-    try {
-      handlerThread.join();
-      handlerThread = null;
-      handler = null;
-    } catch (final InterruptedException e) {
-      LOGGER.e(e, "Exception!");
-    }
 
     super.onPause();
   }
@@ -135,7 +118,7 @@ public abstract class CameraActivity extends Activity implements OnImageAvailabl
 
   private boolean hasPermission() {
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-      return checkSelfPermission(PERMISSION_CAMERA) == PackageManager.PERMISSION_GRANTED && checkSelfPermission(PERMISSION_STORAGE) == PackageManager.PERMISSION_GRANTED;
+      return checkSelfPermission(PERMISSION_CAMERA) == PackageManager.PERMISSION_GRANTED && checkSelfPermission(PERMISSION_STORAGE) == PackageManager.PERMISSION_GRANTED && checkSelfPermission(PERMISSION_READ) == PackageManager.PERMISSION_GRANTED;
     } else {
       return true;
     }
@@ -143,10 +126,11 @@ public abstract class CameraActivity extends Activity implements OnImageAvailabl
 
   private void requestPermission() {
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-      if (shouldShowRequestPermissionRationale(PERMISSION_CAMERA) || shouldShowRequestPermissionRationale(PERMISSION_STORAGE)) {
+      if (shouldShowRequestPermissionRationale(PERMISSION_CAMERA) || shouldShowRequestPermissionRationale(PERMISSION_STORAGE)
+              || shouldShowRequestPermissionRationale(PERMISSION_READ) ) {
         Toast.makeText(CameraActivity.this, "Camera AND storage permission are required for this demo", Toast.LENGTH_LONG).show();
       }
-      requestPermissions(new String[] {PERMISSION_CAMERA, PERMISSION_STORAGE}, PERMISSIONS_REQUEST);
+      requestPermissions(new String[] {PERMISSION_CAMERA, PERMISSION_STORAGE, PERMISSION_READ}, PERMISSIONS_REQUEST);
     }
   }
 
@@ -182,36 +166,6 @@ public abstract class CameraActivity extends Activity implements OnImageAvailabl
     }
   }
 
-  public boolean isDebug() {
-    return debug;
-  }
-
-  public void requestRender() {
-    final OverlayView overlay = (OverlayView) findViewById(R.id.debug_overlay);
-    if (overlay != null) {
-      overlay.postInvalidate();
-    }
-  }
-
-  public void addCallback(final OverlayView.DrawCallback callback) {
-    final OverlayView overlay = (OverlayView) findViewById(R.id.debug_overlay);
-    if (overlay != null) {
-      overlay.addCallback(callback);
-    }
-  }
-
-  public void onSetDebug(final boolean debug) {}
-
-  @Override
-  public boolean onKeyDown(final int keyCode, final KeyEvent event) {
-    if (keyCode == KeyEvent.KEYCODE_VOLUME_DOWN || keyCode == KeyEvent.KEYCODE_VOLUME_UP) {
-      debug = !debug;
-      requestRender();
-      onSetDebug(debug);
-      return true;
-    }
-    return super.onKeyDown(keyCode, event);
-  }
 
   protected abstract void onPreviewSizeChosen(final Size size, final int rotation);
   protected abstract int getLayoutId();
