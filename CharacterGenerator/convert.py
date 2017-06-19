@@ -43,6 +43,6 @@ def generate_array(inputdir,outputfile):
 	return
 	
 #There lines should be commented if you don't want to generate every file
-#generate_array(filestraining,"training.bin")
-#generate_array(fileseval,"verify.bin")
-generate_array(filesingle,"single.bin")
+generate_array(filestraining,"training.bin")
+generate_array(fileseval,"verify.bin")
+#generate_array(filesingle,"single.bin")

@@ -1,0 +1,68 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:background="@drawable/layout_bg"
+    android:layout_height="280px"
+    android:padding="6dip" >
+
+
+    <TextView
+        android:id="@+id/icon"
+        android:text="D"
+        android:textColor="#000"
+        android:textSize="200px"
+        android:layout_width="250px"
+        android:background="@drawable/layout_bg"
+        android:layout_height="250px"
+        android:gravity="center"
+        android:layout_marginLeft="10px"/>
+
+    <LinearLayout
+        android:id="@+id/secondLine"
+        android:layout_width="fill_parent"
+        android:layout_height="100px"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@id/icon"
+        android:gravity="center"
+        android:maxLines="1"
+        android:text="Description"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/icon1"
+            android:layout_width="80px"
+            android:layout_height="fill_parent"
+            android:layout_marginRight="20px"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentTop="true"
+            android:contentDescription="TODO"
+            android:src="@drawable/copyicon" />
+
+        <ImageView
+            android:id="@+id/icon2"
+            android:layout_width="90px"
+            android:layout_marginLeft="20px"
+            android:layout_height="fill_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentTop="true"
+            android:contentDescription="TODO"
+            android:src="@drawable/dictionary" />
+
+
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/firstLine"
+        android:layout_width="fill_parent"
+        android:layout_height="80px"
+        android:layout_marginLeft="20px"
+        android:layout_above="@id/secondLine"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignWithParentIfMissing="true"
+        android:layout_toRightOf="@id/icon"
+        android:gravity="center_vertical"
+        android:text="kanji name"
+        android:textSize="80px" />
+
+</RelativeLayout>

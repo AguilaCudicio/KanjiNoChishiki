@@ -19,9 +19,9 @@
 小	Pequeño	shō	chii-sai
 月	Mes; Luna	gatsu o getsu	tsuki
 日	Día; Sol	nichi	hi
-年	Año	nen	toshi
-早	Temprano	sō	haya-i
-木	Árbol	moku; boku	ki
+年,6,1,4,ネン とし ね,{year} {counter for years}
+早,6,1,3,ソウ サッ はや.い はや はや- はや.まる はや.める さ- さか さわ そ わ,{early} {fast}
+木,4,1,4,ボク モク き こ- ぐ も もと,{tree} {wood}
 林	Arboleda	rin	hayashi
 山	Montaña	san	yama
 川	Río	sen	kawa

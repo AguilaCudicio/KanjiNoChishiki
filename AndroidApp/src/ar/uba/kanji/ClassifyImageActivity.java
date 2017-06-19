@@ -12,8 +12,11 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.view.WindowManager;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ClassifyImageActivity  extends Activity {
@@ -22,8 +25,6 @@ public class ClassifyImageActivity  extends Activity {
     private static final int PERMISSIONS_REQUEST = 5;
 
     private static final String PERMISSION_READ = Manifest.permission.READ_EXTERNAL_STORAGE;
-
-    private ResultsView resultsView;
 
     private Classifier classifier;
     private static final int INPUT_SIZE = 32;
@@ -43,9 +44,6 @@ public class ClassifyImageActivity  extends Activity {
         setContentView(R.layout.result);
 
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
-
-
-        resultsView = (ResultsView) findViewById(R.id.results2);
 
         classifier =
                 TensorFlowImageClassifier.create(
@@ -69,7 +67,23 @@ public class ClassifyImageActivity  extends Activity {
             Bitmap cBitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), resultUri);
             Bitmap read = Bitmap.createScaledBitmap(cBitmap, INPUT_SIZE, INPUT_SIZE, false);
             final List<Classifier.Recognition> results = classifier.recognizeImage(read);
-            resultsView.setResults(results);
+
+            ArrayList<Kanji> arrayOfKanji = new ArrayList<Kanji>();
+            for (final Classifier.Recognition recog : results) {
+                String[] parts = recog.getTitle().split(",");
+                if(parts.length>4){
+                    arrayOfKanji.add(new Kanji(parts[0],parts[5]));
+                }
+                else {
+                    arrayOfKanji.add(new Kanji(parts[0].substring(0,1),""));
+                }
+            }
+
+            KanjiAdapter adapter = new KanjiAdapter(this, arrayOfKanji);
+
+            ListView listView = (ListView) findViewById(R.id.listviewresult);
+            listView.setAdapter(adapter);
+
         }
         catch (Exception e) {
             Log.v("OMG","excepcion");
