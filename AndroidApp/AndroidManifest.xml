@@ -39,6 +39,11 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="ar.uba.kanji.ClassifierActivity" />
         </activity>
+        <activity android:name="ar.uba.kanji.KanjiInformationActivity" android:parentActivityName="ar.uba.kanji.ClassifyImageActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="ar.uba.kanji.ClassifyImageActivity" />
+        </activity>
 
 
     </application>
