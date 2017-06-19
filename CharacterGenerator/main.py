@@ -42,14 +42,9 @@ def Cleanup(out_dir):
 
 def ReadCharacters():
      charactersr = []
-     con=0
      with open(charlist, encoding="utf8") as openfileobject:
             for line in openfileobject:
-                if con == 0:
-                    charactersr.append(line[1])
-                else:
-                    charactersr.append(line[0])
-                con=con+1
+                charactersr.append(line[0])
      openfileobject.close()
      return charactersr
   
@@ -74,7 +69,8 @@ def GenerateCharacters():
             # For each character do  
             for char in characterslist:
                 charnum = charnum + 1
-				#Does the character exist in this font?
+                #Does the character exist in this font?
+                print(font_resource_file)
                 if charInFont(char, TTFont(font_resource_file)):
                     # For each font size do  
                     for font_size in font_sizes:  
@@ -159,15 +155,15 @@ black_colors = (0, 10, 20, 30)
 gray_colors = (135, 145, 155)  
   
 #background_colors = white_colors + black_colors + gray_colors
-background_colors = [245]
+background_colors = [255]
           
 #----------------------------------- Sizes -------------------------------#  
   
 # Character sizes  
-font_sizes = [27]
+font_sizes = [59]
           
 # Image size  
-image_size = 32  
+image_size = 64  
   
 #----------------------------------- Main --------------------------------#  
   
