@@ -15,7 +15,7 @@ IMAGE_SIZE = 64
 
 # Global constants describing the KANJI data set.
 # It's important to change this if you want to add new kanjis to the data set...
-NUM_CLASSES = 200
+NUM_CLASSES = 6355
 NUM_EXAMPLES_PER_EPOCH_FOR_TRAIN = 20400
 NUM_EXAMPLES_PER_EPOCH_FOR_EVAL = 10200
 
