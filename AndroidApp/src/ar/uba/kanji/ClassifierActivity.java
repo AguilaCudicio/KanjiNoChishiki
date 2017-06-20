@@ -32,7 +32,7 @@ public class ClassifierActivity extends CameraActivity implements OnImageAvailab
   private static final Logger LOGGER = new Logger();
 
 
-  private static final int INPUT_SIZE = 32;
+  private static final int INPUT_SIZE = 64;
 
 
   private static final Size DESIRED_PREVIEW_SIZE = new Size(640, 480);

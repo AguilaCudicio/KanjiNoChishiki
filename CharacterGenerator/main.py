@@ -65,7 +65,7 @@ def GenerateCharacters():
             font_resource_file = os.path.join(dirname, filename)  
             filenum = filenum + 1
 
-            charnum = -1
+            charnum = -2
             # For each character do  
             for char in characterslist:
                 charnum = charnum + 1

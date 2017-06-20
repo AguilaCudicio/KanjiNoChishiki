@@ -10,16 +10,14 @@ import os
 from six.moves import xrange  # pylint: disable=redefined-builtin
 import tensorflow as tf
 
-# Process images of this size. Note that this differs from the original
-# image size of 32 x 32. If one alters this number, then the entire model
-# architecture will change and any model would need to be retrained.
-IMAGE_SIZE = 32
+# Process images of this size.
+IMAGE_SIZE = 64
 
 # Global constants describing the KANJI data set.
 # It's important to change this if you want to add new kanjis to the data set...
-NUM_CLASSES = 1006
-NUM_EXAMPLES_PER_EPOCH_FOR_TRAIN = 102612
-NUM_EXAMPLES_PER_EPOCH_FOR_EVAL = 51306
+NUM_CLASSES = 200
+NUM_EXAMPLES_PER_EPOCH_FOR_TRAIN = 20400
+NUM_EXAMPLES_PER_EPOCH_FOR_EVAL = 10200
 
 
 def read_kanji(filename_queue):
@@ -51,10 +49,11 @@ def read_kanji(filename_queue):
   # Dimensions of the images in the KANJI dataset. Copied from Cifar-10 model.
   # See http://www.cs.toronto.edu/~kriz/cifar.html for a description of the
   # input format.
-  label_bytes = 4  # 2 for KANJI0
-  result.height = 32
-  result.width = 32
-  result.depth = 3
+  label_bytes = 4
+  result.height = 64
+  result.width =  64
+  # depth=1 because it's grayscale
+  result.depth = 1
   image_bytes = result.height * result.width * result.depth
   
   

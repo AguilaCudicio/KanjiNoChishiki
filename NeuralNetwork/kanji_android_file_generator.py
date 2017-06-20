@@ -93,10 +93,10 @@ def generateGraph():
     eval_data = FLAGS.eval_data == 'test'
 
     images, labels = kanji.single_input(eval_data=eval_data)
-    images2 = tf.reshape(images,[32,32,3])
+    images2 = tf.reshape(images,[64,64,1])
     images2 = tf.identity(images2, name='InputI') 
     images2 = tf.image.per_image_standardization(images2)
-    images2 = tf.reshape(images2,[1,32,32,3])
+    images2 = tf.reshape(images2,[1,64,64,1])
     
     # Build a Graph that computes the logits predictions from the
     # inference model.

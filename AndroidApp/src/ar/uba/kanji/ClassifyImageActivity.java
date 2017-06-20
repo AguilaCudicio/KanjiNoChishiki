@@ -26,7 +26,7 @@ public class ClassifyImageActivity  extends Activity {
     private static final String PERMISSION_READ = Manifest.permission.READ_EXTERNAL_STORAGE;
 
     private Classifier classifier;
-    private static final int INPUT_SIZE = 32;
+    private static final int INPUT_SIZE = 64;
     private static final int IMAGE_MEAN = 0;
     private static final float IMAGE_STD = 1;
     private static final String INPUT_NAME = "InputI";

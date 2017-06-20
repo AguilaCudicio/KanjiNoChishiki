@@ -27,6 +27,8 @@ def generate_array(inputdir,outputfile):
 			r = im[:,:,0].flatten()
 			g = im[:,:,1].flatten()
 			b = im[:,:,2].flatten()
+			
+			gray = 0.2989 * r + 0.5870 * g + 0.1140 * b
 
 			labelfin= []
 			labellist=np.array( list(label),np.uint8)
@@ -35,7 +37,7 @@ def generate_array(inputdir,outputfile):
 						charac2=charac+48
 						labelfin.append(charac2)
 			
-			out=np.r_[out,np.array( list(labelfin) + list(r) + list(g) + list(b),np.uint8)]
+			out=np.r_[out,np.array( list(labelfin) + list(gray),np.uint8)]
 
 
 			
