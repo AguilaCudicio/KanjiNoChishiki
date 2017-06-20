@@ -18,6 +18,7 @@ package ar.uba.kanji;
 
 import android.content.Context;
 import android.util.AttributeSet;
+import android.view.Display;
 import android.view.TextureView;
 
 /**
@@ -39,21 +40,14 @@ public class AutoFitTextureView extends TextureView {
     super(context, attrs, defStyle);
   }
 
-  /**
-   * Sets the aspect ratio for this view. The size of the view will be measured based on the ratio
-   * calculated from the parameters. Note that the actual sizes of parameters don't matter, that
-   * is, calling setAspectRatio(2, 3) and setAspectRatio(4, 6) make the same result.
-   *
-   * @param width  Relative horizontal size
-   * @param height Relative vertical size
-   */
-  public void setAspectRatio(final int width, final int height) {
-    if (width < 0 || height < 0) {
-      throw new IllegalArgumentException("Size cannot be negative.");
-    }
-    ratioWidth = width;
-    ratioHeight = height;
+
+  public void setAspectRatio() {
+
+    //Changing it to zero so that the image will occupy the entire screen
+    ratioWidth = 0;
+    ratioHeight = 0;
     requestLayout();
+
   }
 
   @Override

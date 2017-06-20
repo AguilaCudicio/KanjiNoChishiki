@@ -27,6 +27,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.HandlerThread;
 import android.text.TextUtils;
+import android.util.Log;
 import android.util.Size;
 import android.util.SparseIntArray;
 import android.view.LayoutInflater;
@@ -380,13 +381,7 @@ public class CameraConnectionFragment extends Fragment {
                 inputSize.getWidth(),
                 inputSize.getHeight());
 
-        // We fit the aspect ratio of TextureView to the size of preview we picked.
-        final int orientation = getResources().getConfiguration().orientation;
-        if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
-          textureView.setAspectRatio(previewSize.getWidth(), previewSize.getHeight());
-        } else {
-          textureView.setAspectRatio(previewSize.getHeight(), previewSize.getWidth());
-        }
+        textureView.setAspectRatio();
 
         CameraConnectionFragment.this.cameraId = cameraId;
       }

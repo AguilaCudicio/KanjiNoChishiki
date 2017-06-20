@@ -5,9 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Bitmap.Config;
-import android.graphics.Canvas;
 import android.graphics.Matrix;
-import android.graphics.Typeface;
 import android.media.Image;
 import android.media.Image.Plane;
 import android.media.ImageReader;
@@ -16,7 +14,6 @@ import android.net.Uri;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.util.Size;
-import android.util.TypedValue;
 import android.view.Display;
 import android.view.View;
 
@@ -24,16 +21,11 @@ import com.theartofdev.edmodo.cropper.CropImage;
 import com.theartofdev.edmodo.cropper.CropImageView;
 
 import java.io.ByteArrayOutputStream;
-import ar.uba.kanji.env.BorderedText;
 import ar.uba.kanji.env.ImageUtils;
 import ar.uba.kanji.env.Logger;
 
 public class ClassifierActivity extends CameraActivity implements OnImageAvailableListener {
   private static final Logger LOGGER = new Logger();
-
-
-  private static final int INPUT_SIZE = 64;
-
 
   private static final Size DESIRED_PREVIEW_SIZE = new Size(640, 480);
 
@@ -48,10 +40,6 @@ public class ClassifierActivity extends CameraActivity implements OnImageAvailab
   private boolean computing = false;
 
 
-
-  private BorderedText borderedText;
-
-
   @Override
   protected int getLayoutId() {
     return R.layout.camera_connection_fragment;
@@ -62,16 +50,8 @@ public class ClassifierActivity extends CameraActivity implements OnImageAvailab
     return DESIRED_PREVIEW_SIZE;
   }
 
-  private static final float TEXT_SIZE_DIP = 10;
-
   @Override
   public void onPreviewSizeChosen(final Size size, final int rotation) {
-    final float textSizePx =
-        TypedValue.applyDimension(
-            TypedValue.COMPLEX_UNIT_DIP, TEXT_SIZE_DIP, getResources().getDisplayMetrics());
-    borderedText = new BorderedText(textSizePx);
-    borderedText.setTypeface(Typeface.MONOSPACE);
-
 
     previewWidth = size.getWidth();
     previewHeight = size.getHeight();
