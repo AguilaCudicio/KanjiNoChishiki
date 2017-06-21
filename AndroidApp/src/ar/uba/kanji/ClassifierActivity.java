@@ -1,4 +1,3 @@
-
 package ar.uba.kanji;
 
 import android.content.Context;
@@ -114,13 +113,7 @@ public class ClassifierActivity extends CameraActivity implements OnImageAvailab
 
     rgbFrameBitmap.setPixels(rgbBytes, 0, previewWidth, 0, 0, previewWidth, previewHeight);
 
-    runInBackground(
-            new Runnable() {
-              @Override
-              public void run() {
-                computing = false;
-              }
-            });
+    computing = false;
   }
 
 
@@ -141,12 +134,19 @@ public class ClassifierActivity extends CameraActivity implements OnImageAvailab
     CropImage.activity(getImageUri(this.getApplicationContext(),rotatedBitmap))
             .setGuidelines(CropImageView.Guidelines.ON)
             .start(this);
+  }
 
+  public void uploadImage(View view) {
+
+    Intent intent = new Intent(this, ReadImageActivity.class);
+    startActivity(intent);
+    finish();
 
   }
 
   @Override
   public void onActivityResult(int requestCode, int resultCode, Intent data) {
+    super.onActivityResult(requestCode, resultCode, data);
 
     if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE) {
       CropImage.ActivityResult result = CropImage.getActivityResult(data);
@@ -155,12 +155,13 @@ public class ClassifierActivity extends CameraActivity implements OnImageAvailab
         Intent intent = new Intent(this, ClassifyImageActivity.class);
         intent.putExtra("imageUri", resultUri.toString());
         startActivity(intent);
+        finish();
 
       } else if (resultCode == CropImage.CROP_IMAGE_ACTIVITY_RESULT_ERROR_CODE) {
-        Exception error = result.getError();
-        Log.v("OMG","no hay crop image!");
+        Log.v("KANJI", result.getError().toString());
       }
     }
+
   }
 
 }

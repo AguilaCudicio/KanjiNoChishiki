@@ -121,6 +121,13 @@ public class ClassifyImageActivity  extends Activity {
         }
     }
 
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(this, ClassifierActivity.class);
+        startActivity(intent);
+        finish();
+    }
+
 
 
 }
