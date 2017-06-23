@@ -50,6 +50,11 @@ NUM_EXAMPLES_PER_EPOCH_FOR_TRAIN = kanji_input.NUM_EXAMPLES_PER_EPOCH_FOR_TRAIN
 NUM_EXAMPLES_PER_EPOCH_FOR_EVAL = kanji_input.NUM_EXAMPLES_PER_EPOCH_FOR_EVAL
 
 
+# Ammount of training and verify files
+numtraining = 13
+numverify = 5
+
+
 # Constants describing the training process.
 MOVING_AVERAGE_DECAY = 0.9999     # The decay to use for the moving average.
 NUM_EPOCHS_PER_DECAY = 300.0      # Epochs after which learning rate decays.
@@ -134,7 +139,7 @@ def distorted_inputs():
     ValueError: If no data_dir"""
 
   images, labels = kanji_input.distorted_inputs(data_dir='',
-                                                  batch_size=FLAGS.batch_size,file_name='training.bin')
+                                                  batch_size=FLAGS.batch_size,file_name='data/training',max_num=numtraining)
   if FLAGS.use_fp16:
     images = tf.cast(images, tf.float16)
     labels = tf.cast(labels, tf.float16)
@@ -154,21 +159,9 @@ def inputs(eval_data):
   Raises:
     ValueError: If no data_dir
   """
-  """if not FLAGS.data_dir:
-    raise ValueError('Please supply a data_dir')
-  data_dir = os.path.join(FLAGS.data_dir, 'cifar-10-batches-bin')
-  images, labels = kanji_input.inputs(eval_data=eval_data,
-                                        data_dir=data_dir,
-                                        batch_size=FLAGS.batch_size)
-  if FLAGS.use_fp16:
-    images = tf.cast(images, tf.float16)
-    labels = tf.cast(labels, tf.float16)
-  return images, labels
-  """
-  
-  #Copy paste  del distorted inputs modificado..
+
   images, labels = kanji_input.distorted_inputs(data_dir='',
-                                                  batch_size=FLAGS.batch_size,file_name='verify.bin')
+                                                  batch_size=FLAGS.batch_size,file_name='data/verify',max_num=numverify)
   if FLAGS.use_fp16:
     images = tf.cast(images, tf.float16)
     labels = tf.cast(labels, tf.float16)
@@ -189,10 +182,9 @@ def single_input(eval_data):
     ValueError: If no data_dir
 
   """
-  
-  #Copy paste  del distorted inputs modificado..
+
   images, labels = kanji_input.distorted_inputs(data_dir='',
-                                                  batch_size=1,file_name='single.bin')
+                                                  batch_size=1,file_name='single',max_num=2)
   if FLAGS.use_fp16:
     images = tf.cast(images, tf.float16)
     labels = tf.cast(labels, tf.float16)

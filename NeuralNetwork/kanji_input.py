@@ -16,8 +16,8 @@ IMAGE_SIZE = 64
 # Global constants describing the KANJI data set.
 # It's important to change this if you want to add new kanjis to the data set...
 NUM_CLASSES = 6355
-NUM_EXAMPLES_PER_EPOCH_FOR_TRAIN = 20400
-NUM_EXAMPLES_PER_EPOCH_FOR_EVAL = 10200
+NUM_EXAMPLES_PER_EPOCH_FOR_TRAIN = 593475
+NUM_EXAMPLES_PER_EPOCH_FOR_EVAL = 161454
 
 
 def read_kanji(filename_queue):
@@ -135,7 +135,7 @@ def _generate_image_and_label_batch(image, label, min_queue_examples,
   return images, tf.reshape(label_batch, [batch_size])
 
 										 
-def distorted_inputs(data_dir, batch_size,file_name):
+def distorted_inputs(data_dir, batch_size,file_name,max_num):
   """Construct distorted input for training using the Reader ops.
 
   Args:
@@ -147,11 +147,12 @@ def distorted_inputs(data_dir, batch_size,file_name):
     images: Images. 4D tensor of [batch_size, IMAGE_SIZE, IMAGE_SIZE, 3] size.
     labels: Labels. 1D tensor of [batch_size] size.
   """
-  filenames = [os.path.join(data_dir, file_name)]
+  filenames = [os.path.join(data_dir, file_name+'_%d.bin' % i)
+    for i in xrange(1, max_num)]
   for f in filenames:
     if not tf.gfile.Exists(f):
       raise ValueError('Failed to find file: ' + f)
-
+  print (filenames)
   # Create a queue that produces the filenames to read.
   filename_queue = tf.train.string_input_producer(filenames)
 
@@ -187,7 +188,7 @@ def distorted_inputs(data_dir, batch_size,file_name):
 
 
   # Ensure that the random shuffling has good mixing properties.
-  min_fraction_of_examples_in_queue = 0.4
+  min_fraction_of_examples_in_queue = 0.04
   min_queue_examples = int(NUM_EXAMPLES_PER_EPOCH_FOR_TRAIN *
                            min_fraction_of_examples_in_queue)
   print ('Filling queue with %d CIFAR images before starting to train. '
@@ -249,7 +250,7 @@ def inputs(eval_data, data_dir, batch_size):
   float_image = tf.image.per_image_standardization(resized_image)
 
   # Ensure that the random shuffling has good mixing properties.
-  min_fraction_of_examples_in_queue = 0.4
+  min_fraction_of_examples_in_queue = 0.04
   min_queue_examples = int(num_examples_per_epoch *
                            min_fraction_of_examples_in_queue)
 
