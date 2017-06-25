@@ -70,11 +70,12 @@ public class ClassifyImageActivity  extends Activity {
             ArrayList<Kanji> arrayOfKanji = new ArrayList<Kanji>();
             for (final Classifier.Recognition recog : results) {
                 String[] parts = recog.getTitle().split(",");
+                Float probability = recog.getConfidence();
                 if(parts.length>4){
-                    arrayOfKanji.add(new Kanji(parts[0],parts[5],parts[4],parts[3],parts[2], parts[1]));
+                    arrayOfKanji.add(new Kanji(parts[0],parts[5],parts[4],parts[3],parts[2], parts[1],probability));
                 }
                 else {
-                    arrayOfKanji.add(new Kanji(parts[0].substring(0,1),"","","","",""));
+                    arrayOfKanji.add(new Kanji(parts[0].substring(0,1),"","","","","", probability));
                 }
             }
 

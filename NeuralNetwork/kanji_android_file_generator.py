@@ -102,7 +102,7 @@ def generateGraph():
     # inference model.
     logits = kanji.inference(images2)
     final_tensor = tf.nn.softmax(logits, name="finalresult")
- 
+
     generateFile()
 
 

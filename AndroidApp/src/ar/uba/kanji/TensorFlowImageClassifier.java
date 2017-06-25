@@ -15,6 +15,7 @@ import java.util.PriorityQueue;
 import java.util.Vector;
 import org.tensorflow.Operation;
 import org.tensorflow.contrib.android.TensorFlowInferenceInterface;
+import ar.uba.kanji.env.ImageUtils;
 
 /** A classifier specialized to label images using TensorFlow. */
 public class TensorFlowImageClassifier implements Classifier {
@@ -103,7 +104,6 @@ public class TensorFlowImageClassifier implements Classifier {
     // Pre-allocate buffers.
     c.outputNames = new String[] {outputName};
     c.intValues = new int[inputSize * inputSize];
-    c.floatValues = new float[inputSize * inputSize];
     c.outputs = new float[numClasses];
 
     return c;
@@ -115,18 +115,18 @@ public class TensorFlowImageClassifier implements Classifier {
     Trace.beginSection("recognizeImage");
 
     Trace.beginSection("preprocessBitmap");
-    // Preprocess the image data from 0-255 int to normalized float based
-    // on the provided parameters.
+
     bitmap.getPixels(intValues, 0, bitmap.getWidth(), 0, 0, bitmap.getWidth(), bitmap.getHeight());
-    for (int i = 0; i < intValues.length; ++i) {
-      final int val = intValues[i];
-      float r= (((val >> 16) & 0xFF) - imageMean) / imageStd;
-      float g = (((val >> 8) & 0xFF) - imageMean) / imageStd;
-      float b = ((val & 0xFF) - imageMean) / imageStd;
-      floatValues[i ] =  0.2989f * r + 0.5870f * g + 0.1140f * b;
-    }
+
+    floatValues = ImageTransformation.getGrayScaleTransformation(intValues,imageMean,imageStd,inputSize);
+
     Trace.endSection();
 
+    //It seems that the character is brighter than the background and we need to invert it
+    if (ImageTransformation.needsToBeInverted(floatValues)) {
+      floatValues = ImageTransformation.invertImageColor(floatValues);
+      Log.v("omg", "this image was inverted");
+    };
     // Copy the input data into TensorFlow.
     Trace.beginSection("feed");
     inferenceInterface.feed(inputName, floatValues, 1, inputSize, inputSize,1);

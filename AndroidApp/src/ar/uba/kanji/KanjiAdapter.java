@@ -29,6 +29,7 @@ public class KanjiAdapter extends ArrayAdapter<Kanji> {
         kanjiName.setText(kanji.description);
         kanjiSymbol.setText(kanji.symbol);
 
+
         convertView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

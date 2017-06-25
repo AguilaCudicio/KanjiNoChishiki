@@ -163,5 +163,4 @@ public class ClassifierActivity extends CameraActivity implements OnImageAvailab
     }
 
   }
-
 }

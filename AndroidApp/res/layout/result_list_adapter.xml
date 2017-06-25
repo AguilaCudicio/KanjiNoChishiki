@@ -20,12 +20,14 @@
         android:id="@+id/secondLine"
         android:layout_width="fill_parent"
         android:layout_height="100px"
-        android:layout_alignParentBottom="true"
-        android:layout_toRightOf="@id/icon"
         android:gravity="center"
         android:maxLines="1"
         android:text="Description"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_alignBottom="@+id/icon"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="16dp"
+        android:layout_toEndOf="@+id/icon">
 
         <ImageView
             android:id="@+id/icon1"
