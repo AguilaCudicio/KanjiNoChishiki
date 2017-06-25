@@ -15,15 +15,16 @@ import java.util.PriorityQueue;
 import java.util.Vector;
 import org.tensorflow.Operation;
 import org.tensorflow.contrib.android.TensorFlowInferenceInterface;
-import ar.uba.kanji.env.ImageUtils;
 
 /** A classifier specialized to label images using TensorFlow. */
 public class TensorFlowImageClassifier implements Classifier {
   private static final String TAG = "TensorFlowImage";
 
-  // Only return this many results with at least this confidence.
-  private static final int MAX_RESULTS = 3;
-  private static final float THRESHOLD = 0.1f;
+  // Only return this many results
+  private static final int MAX_RESULTS = 30;
+  private static final int RESULTS_TO_SHOW = 5;
+
+  private int MAX_JOYO_KANJI = 2133;
 
   // Config values.
   private String inputName;
@@ -40,6 +41,8 @@ public class TensorFlowImageClassifier implements Classifier {
   private String[] outputNames;
 
   private boolean logStats = false;
+
+  private boolean restrictSearch = false;
 
   private TensorFlowInferenceInterface inferenceInterface;
 
@@ -72,7 +75,6 @@ public class TensorFlowImageClassifier implements Classifier {
     c.outputName = outputName;
 
     // Read the label names into memory.
-    // TODO(andrewharp): make this handle non-assets.
     String actualFilename = labelFilename.split("file:///android_asset/")[1];
     Log.i(TAG, "Reading labels from: " + actualFilename);
     BufferedReader br = null;
@@ -111,6 +113,7 @@ public class TensorFlowImageClassifier implements Classifier {
 
   @Override
   public List<Recognition> recognizeImage(final Bitmap bitmap) {
+
     // Log this method so that it can be analyzed with systrace.
     Trace.beginSection("recognizeImage");
 
@@ -142,6 +145,8 @@ public class TensorFlowImageClassifier implements Classifier {
     inferenceInterface.fetch(outputName, outputs);
     Trace.endSection();
 
+    int limit = 99999;
+    if (this.restrictSearch == true) limit=MAX_JOYO_KANJI+1;
     // Find the best classifications.
     PriorityQueue<Recognition> pq =
         new PriorityQueue<Recognition>(
@@ -154,14 +159,14 @@ public class TensorFlowImageClassifier implements Classifier {
               }
             });
     for (int i = 0; i < outputs.length; ++i) {
-      if (outputs[i] > THRESHOLD) {
+      if (i < limit) {
         pq.add(
             new Recognition(
                 "" + i, labels.size() > i ? labels.get(i) : "unknown", outputs[i], null));
       }
     }
     final ArrayList<Recognition> recognitions = new ArrayList<Recognition>();
-    int recognitionsSize = Math.min(pq.size(), MAX_RESULTS);
+    int recognitionsSize = Math.min(pq.size(),RESULTS_TO_SHOW);
     for (int i = 0; i < recognitionsSize; ++i) {
       recognitions.add(pq.poll());
     }
@@ -170,17 +175,7 @@ public class TensorFlowImageClassifier implements Classifier {
   }
 
   @Override
-  public void enableStatLogging(boolean logStats) {
-    this.logStats = logStats;
-  }
-
-  @Override
-  public String getStatString() {
-    return inferenceInterface.getStatString();
-  }
-
-  @Override
-  public void close() {
-    inferenceInterface.close();
+  public void setRestrictSearch(boolean r) {
+    this.restrictSearch = r;
   }
 }

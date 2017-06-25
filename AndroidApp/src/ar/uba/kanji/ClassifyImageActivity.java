@@ -4,11 +4,13 @@ package ar.uba.kanji;
 import android.Manifest;
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.view.WindowManager;
@@ -65,6 +67,12 @@ public class ClassifyImageActivity  extends Activity {
         try {
             Bitmap cBitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), resultUri);
             Bitmap read = Bitmap.createScaledBitmap(cBitmap, INPUT_SIZE, INPUT_SIZE, false);
+
+            SharedPreferences mPrefs = PreferenceManager.getDefaultSharedPreferences(  this );
+            int conf = mPrefs.getInt("config",-1);
+
+            classifier.setRestrictSearch(conf==0);
+
             final List<Classifier.Recognition> results = classifier.recognizeImage(read);
 
             ArrayList<Kanji> arrayOfKanji = new ArrayList<Kanji>();

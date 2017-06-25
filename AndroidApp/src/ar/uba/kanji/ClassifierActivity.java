@@ -1,5 +1,6 @@
 package ar.uba.kanji;
 
+import android.app.FragmentManager;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -39,7 +40,7 @@ public class ClassifierActivity extends CameraActivity implements OnImageAvailab
   private boolean computing = false;
 
 
-  @Override
+    @Override
   protected int getLayoutId() {
     return R.layout.camera_connection_fragment;
   }
@@ -141,6 +142,14 @@ public class ClassifierActivity extends CameraActivity implements OnImageAvailab
     Intent intent = new Intent(this, ReadImageActivity.class);
     startActivity(intent);
     finish();
+
+  }
+
+  public void configure(View view){
+
+    FragmentManager fragmentManager = getFragmentManager();
+    ConfigurationDialog dialog = new ConfigurationDialog();
+    dialog.show(fragmentManager, "tagAlerta");
 
   }
 
