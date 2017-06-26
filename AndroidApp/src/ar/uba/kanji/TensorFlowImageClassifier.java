@@ -21,7 +21,6 @@ public class TensorFlowImageClassifier implements Classifier {
   private static final String TAG = "TensorFlowImage";
 
   // Only return this many results
-  private static final int MAX_RESULTS = 30;
   private static final int RESULTS_TO_SHOW = 5;
 
   private int MAX_JOYO_KANJI = 2133;

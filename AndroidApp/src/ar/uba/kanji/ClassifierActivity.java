@@ -153,6 +153,13 @@ public class ClassifierActivity extends CameraActivity implements OnImageAvailab
 
   }
 
+  public void dictionary(View view) {
+
+    Intent intent = new Intent(this, DictionaryActivity.class);
+    startActivity(intent);
+
+  }
+
   @Override
   public void onActivityResult(int requestCode, int resultCode, Intent data) {
     super.onActivityResult(requestCode, resultCode, data);

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <TextView
+        android:id="@+id/grades"
+        android:layout_width="fill_parent"
+        android:layout_height="50px"
+        android:layout_marginLeft="20px"
+        android:layout_marginTop="10px"
+        android:text="Insert kanji meaning..."
+        android:textSize="40px" />
+
+    <EditText
+        android:id="@+id/searchkey"
+        android:layout_width="fill_parent"
+        android:imeOptions="actionSearch"
+        android:inputType="text"
+        android:layout_height="wrap_content"
+        >
+    </EditText>
+
+    <ListView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/listviewresult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
+
+</LinearLayout>
