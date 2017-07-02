@@ -66,7 +66,7 @@ public class ClassifyImageActivity  extends Activity {
 
         try {
             Bitmap cBitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), resultUri);
-            Bitmap read = Bitmap.createScaledBitmap(cBitmap, INPUT_SIZE, INPUT_SIZE, false);
+            Bitmap read = Bitmap.createScaledBitmap(cBitmap, INPUT_SIZE, INPUT_SIZE, true);
 
             SharedPreferences mPrefs = PreferenceManager.getDefaultSharedPreferences(  this );
             int conf = mPrefs.getInt("config",-1);
@@ -136,6 +136,7 @@ public class ClassifyImageActivity  extends Activity {
         startActivity(intent);
         finish();
     }
+
 
 
 
