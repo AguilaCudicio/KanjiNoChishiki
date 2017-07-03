@@ -45,6 +45,13 @@
                 android:value="ar.uba.kanji.ClassifierActivity" />
         </activity>
         <activity
+            android:name=".AutoDetectImageActivity"
+            android:parentActivityName=".ClassifierActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="ar.uba.kanji.ClassifierActivity" />
+        </activity>
+        <activity
             android:name=".DictionaryActivity"
             android:parentActivityName=".ClassifierActivity">
             <meta-data

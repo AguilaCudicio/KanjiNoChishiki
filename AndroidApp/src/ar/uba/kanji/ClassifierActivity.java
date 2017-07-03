@@ -38,6 +38,7 @@ public class ClassifierActivity extends CameraActivity implements OnImageAvailab
   private Bitmap rgbFrameBitmap = null;
 
   private boolean computing = false;
+  private boolean autoDetect = true;
 
 
     @Override
@@ -132,9 +133,17 @@ public class ClassifierActivity extends CameraActivity implements OnImageAvailab
 
     Bitmap rotatedBitmap = Bitmap.createBitmap(rgbFrameBitmap , 0, 0, rgbFrameBitmap .getWidth(), rgbFrameBitmap.getHeight(), matrix, true);
 
-    CropImage.activity(getImageUri(this.getApplicationContext(),rotatedBitmap))
+    if (this.autoDetect) {
+      Intent intent = new Intent(this, AutoDetectImageActivity.class);
+      intent.putExtra("imageUri", getImageUri(this.getApplicationContext(),rotatedBitmap).toString());
+      startActivity(intent);
+      finish();
+    }
+    else {
+     CropImage.activity(getImageUri(this.getApplicationContext(),rotatedBitmap))
             .setGuidelines(CropImageView.Guidelines.ON)
             .start(this);
+    }
   }
 
   public void uploadImage(View view) {
