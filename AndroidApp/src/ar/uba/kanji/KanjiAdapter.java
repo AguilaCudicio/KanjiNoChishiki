@@ -1,7 +1,9 @@
 package ar.uba.kanji;
 
+import android.content.ClipData;
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,9 +13,10 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
+import static android.content.ClipDescription.MIMETYPE_TEXT_PLAIN;
+
 public class KanjiAdapter extends ArrayAdapter<Kanji> {
     Context c;
-    String symbol;
     public KanjiAdapter(Context context, ArrayList<Kanji> users) {
 
         super(context, 0, users);
@@ -30,14 +33,46 @@ public class KanjiAdapter extends ArrayAdapter<Kanji> {
         }
 
 
-        ImageButton m = (ImageButton) convertView.findViewById(R.id.icon1);
+        ImageButton copyplusbutton = (ImageButton) convertView.findViewById(R.id.icon3);
 
-        m.setOnClickListener(new View.OnClickListener() {
+        copyplusbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                android.content.ClipboardManager clipboard = (android.content.ClipboardManager) c.getSystemService(Context.CLIPBOARD_SERVICE);
-                android.content.ClipData clip = android.content.ClipData.newPlainText("symbol",kanji.symbol);
-                clipboard.setPrimaryClip(clip);
+                String kanji = getItem(position).symbol;
+                ClipboardHelper.addToClipboard(kanji,c);
+            }
+        });
+
+        ImageButton copybutton = (ImageButton) convertView.findViewById(R.id.icon1);
+
+        copybutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String kanji = getItem(position).symbol;
+                ClipboardHelper.copyToClipboard(kanji,c);
+            }
+        });
+
+        ImageButton dictionarybutton = (ImageButton) convertView.findViewById(R.id.icon2);
+
+        dictionarybutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String kanji = getItem(position).symbol;
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://jisho.org/search/"+kanji));
+                c.startActivity(browserIntent);
+            }
+        });
+
+        ImageButton dictionaryplusbutton = (ImageButton) convertView.findViewById(R.id.icon4);
+
+        dictionaryplusbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String kanji = getItem(position).symbol;
+                String textToPaste = ClipboardHelper.getFromClipboard(c);
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://jisho.org/search/"+textToPaste+kanji));
+                c.startActivity(browserIntent);
             }
         });
 
@@ -45,10 +80,9 @@ public class KanjiAdapter extends ArrayAdapter<Kanji> {
         TextView kanjiSymbol = (TextView) convertView.findViewById(R.id.icon);
         TextView kanjiName = (TextView) convertView.findViewById(R.id.firstLine);
         String description = kanji.description;
-        if (description.length()>13) description=description.substring(0,9)+"...";
+        if (description.length()>25) description=description.substring(0,21)+"...";
         kanjiName.setText(description);
         kanjiSymbol.setText(kanji.symbol);
-        symbol = kanji.symbol;
 
         convertView.setOnClickListener(new View.OnClickListener() {
             @Override

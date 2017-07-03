@@ -1,37 +1,87 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:background="@drawable/layout_bg"
-    android:layout_height="280px"
+    android:layout_height="320px"
     android:padding="6dip" >
 
+
+    <TextView
+        android:id="@+id/firstLine"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignWithParentIfMissing="true"
+        android:layout_marginLeft="20px"
+        android:elegantTextHeight="true"
+        android:gravity="center"
+        android:maxLines="1"
+        android:text="kanji name"
+        android:textSize="50px"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true" />
 
     <TextView
         android:id="@+id/icon"
         android:text="D"
         android:textColor="#000"
-        android:textSize="200px"
+        android:textSize="190px"
         android:layout_width="250px"
         android:background="@drawable/layout_bg"
-        android:layout_height="250px"
+        android:layout_height="230px"
         android:gravity="center"
-        android:layout_marginLeft="10px"/>
+        android:layout_marginLeft="10px"
+        android:layout_alignParentStart="true" />
+
 
     <LinearLayout
         android:id="@+id/secondLine"
-        android:layout_width="fill_parent"
-        android:layout_height="100px"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
         android:gravity="center"
         android:maxLines="1"
-        android:text="Description"
         android:orientation="horizontal"
-        android:layout_alignBottom="@+id/icon"
+        android:text="Description"
+        android:layout_above="@+id/thirdLine"
         android:layout_alignParentEnd="true"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="10dp"
         android:layout_toEndOf="@+id/icon">
 
         <ImageButton
             android:id="@+id/icon1"
+            android:layout_width="80px"
+            android:layout_height="80px"
+            android:layout_marginRight="20px"
             android:background="@drawable/copyicon"
+            android:contentDescription="TODO" />
+
+        />
+
+        <ImageButton
+            android:id="@+id/icon2"
+            android:layout_width="90px"
+            android:layout_height="80px"
+            android:layout_marginLeft="20px"
+            android:background="@drawable/dictionary"
+            android:contentDescription="TODO" />
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/thirdLine"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:maxLines="1"
+        android:text="Description"
+        android:orientation="horizontal"
+        android:layout_above="@+id/firstLine"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="10dp"
+        android:layout_toEndOf="@+id/icon">
+
+
+        <ImageButton
+            android:id="@+id/icon3"
+            android:background="@drawable/copyplus"
             android:layout_height="80px"
             android:layout_width="80px"
             android:layout_marginRight="20px"
@@ -40,33 +90,17 @@
             android:contentDescription="TODO"
             />
 
-        <ImageView
-            android:id="@+id/icon2"
+        <ImageButton
+            android:id="@+id/icon4"
             android:layout_width="90px"
+            android:layout_height="80px"
             android:layout_marginLeft="20px"
-            android:layout_height="fill_parent"
             android:layout_alignParentBottom="true"
             android:layout_alignParentTop="true"
             android:contentDescription="TODO"
-            android:src="@drawable/dictionary" />
-
-
+            android:background="@drawable/dictionaryplus" />
 
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/firstLine"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20px"
-        android:layout_above="@id/secondLine"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignWithParentIfMissing="true"
-        android:layout_toRightOf="@id/icon"
-        android:gravity="center_vertical"
-        android:text="kanji name"
-        android:elegantTextHeight="true"
-        android:textSize="50px" />
 
 </RelativeLayout>

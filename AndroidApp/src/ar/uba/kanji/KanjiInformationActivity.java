@@ -1,11 +1,15 @@
 package ar.uba.kanji;
 
 import android.app.Activity;
+import android.content.ClipData;
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+
+import static android.content.ClipDescription.MIMETYPE_TEXT_PLAIN;
 
 public class KanjiInformationActivity extends Activity {
 
@@ -48,8 +52,23 @@ public class KanjiInformationActivity extends Activity {
     }
 
    public void copy(View view){
-                android.content.ClipboardManager clipboard = (android.content.ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
-                android.content.ClipData clip = android.content.ClipData.newPlainText("symbol",symbol);
-                clipboard.setPrimaryClip(clip);
+       ClipboardHelper.copyToClipboard(symbol,this.getApplicationContext());
+   }
+
+   public void findInDictionary(View view){
+       Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://jisho.org/search/"+symbol));
+       startActivity(browserIntent);
+   }
+
+   public void  findInDictionaryPlus(View v) {
+       String textToPaste = ClipboardHelper.getFromClipboard(this.getApplicationContext());
+       Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://jisho.org/search/"+textToPaste+symbol));
+       startActivity(browserIntent);
+   }
+
+   public void copyPlus(View v) {
+       ClipboardHelper.addToClipboard(symbol,this.getApplicationContext());
     }
+
+
 }

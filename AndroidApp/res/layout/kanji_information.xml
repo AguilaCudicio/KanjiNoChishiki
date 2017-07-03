@@ -92,7 +92,7 @@
 
 
     <LinearLayout
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_height="100px"
         android:layout_alignParentBottom="true"
         android:layout_toRightOf="@id/icon"
@@ -102,6 +102,11 @@
         android:text="Description"
         android:orientation="horizontal">
 
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1" >
+        </Space>
 
         <ImageButton
             android:id="@+id/icon1"
@@ -109,21 +114,64 @@
             android:layout_height="80px"
             android:layout_width="80px"
             android:onClick="copy"
-            android:layout_marginRight="20px"
             android:layout_alignParentBottom="true"
             android:layout_alignParentTop="true"
             android:contentDescription="TODO"
             />
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1" >
+        </Space>
 
-        <ImageView
+        <ImageButton
             android:id="@+id/icon2"
             android:layout_width="90px"
-            android:layout_marginLeft="20px"
-            android:layout_height="fill_parent"
+            android:layout_height="80px"
+            android:onClick="findInDictionary"
             android:layout_alignParentBottom="true"
             android:layout_alignParentTop="true"
             android:contentDescription="TODO"
-            android:src="@drawable/dictionary" />
+            android:background="@drawable/dictionary" />
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1" >
+        </Space>
+
+
+        <ImageButton
+            android:id="@+id/icon3"
+            android:background="@drawable/copyplus"
+            android:layout_height="80px"
+            android:layout_width="80px"
+            android:onClick="copyPlus"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentTop="true"
+            android:contentDescription="TODO"
+            />
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1" >
+        </Space>
+
+        <ImageButton
+            android:id="@+id/icon4"
+            android:layout_width="90px"
+            android:layout_height="80px"
+            android:onClick="findInDictionaryPlus"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentTop="true"
+            android:contentDescription="TODO"
+            android:background="@drawable/dictionaryplus" />
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1" >
+        </Space>
+
 
 
 
