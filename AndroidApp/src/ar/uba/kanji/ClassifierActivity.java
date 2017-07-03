@@ -85,7 +85,6 @@ public class ClassifierActivity extends CameraActivity implements OnImageAvailab
         return;
       }
       computing = true;
-
       final Plane[] planes = image.getPlanes();
       fillBytes(planes, yuvBytes);
 
@@ -134,6 +133,7 @@ public class ClassifierActivity extends CameraActivity implements OnImageAvailab
 
     CropImage.activity(getImageUri(this.getApplicationContext(),rotatedBitmap))
             .setGuidelines(CropImageView.Guidelines.ON)
+            .setMinCropResultSize(5,5)
             .start(this);
   }
 

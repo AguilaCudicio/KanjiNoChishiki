@@ -42,6 +42,7 @@ public class ReadImageActivity extends ActivityWithPermission {
             Uri uri = data.getData();
             CropImage.activity(uri)
                     .setGuidelines(CropImageView.Guidelines.ON)
+                    .setMinCropResultSize(5,5)
                     .start(this);
         }
         if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE) {

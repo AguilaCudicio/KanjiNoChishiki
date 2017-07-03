@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ScrollView01"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+<LinearLayout
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -9,9 +13,9 @@
         android:layout_marginBottom="10px"
         android:text="Kanji name"
         android:textColor="#000"
-        android:textSize="100px"
+        android:textSize="60px"
         android:layout_width="fill_parent"
-        android:layout_height="100px"
+        android:layout_height="wrap_content"
         android:gravity="center"
         android:layout_marginLeft="10px"/>
 
@@ -19,7 +23,7 @@
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="fill_parent"
         android:background="@drawable/layout_bg"
-        android:layout_height="280px"
+        android:layout_height="wrap_content"
         android:padding="6dip" >
 
     <TextView
@@ -36,14 +40,14 @@
         <TextView
             android:id="@+id/firstLine"
             android:layout_width="fill_parent"
-            android:layout_height="80px"
+            android:layout_height="wrap_content"
             android:layout_marginLeft="20px"
             android:layout_alignParentRight="true"
             android:layout_alignParentTop="true"
             android:layout_alignWithParentIfMissing="true"
             android:gravity="center_vertical"
             android:text="reading"
-            android:textSize="80px"
+            android:textSize="60px"
             android:layout_toEndOf="@+id/symbol" />
 
     </RelativeLayout>
@@ -98,15 +102,18 @@
         android:text="Description"
         android:orientation="horizontal">
 
-        <ImageView
+
+        <ImageButton
             android:id="@+id/icon1"
+            android:background="@drawable/copyicon"
+            android:layout_height="80px"
             android:layout_width="80px"
-            android:layout_height="fill_parent"
+            android:onClick="copy"
             android:layout_marginRight="20px"
             android:layout_alignParentBottom="true"
             android:layout_alignParentTop="true"
             android:contentDescription="TODO"
-            android:src="@drawable/copyicon" />
+            />
 
         <ImageView
             android:id="@+id/icon2"
@@ -123,3 +130,4 @@
     </LinearLayout>
 
 </LinearLayout>
+</ScrollView>

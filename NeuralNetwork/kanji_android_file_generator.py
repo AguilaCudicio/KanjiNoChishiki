@@ -101,7 +101,7 @@ def generateGraph():
     # Build a Graph that computes the logits predictions from the
     # inference model.
     logits = kanji.inference(images2)
-    final_tensor = tf.nn.softmax(logits, name="finalresult")
+    final_tensor = tf.add(logits, 0, name="finalresult")
 
     generateFile()
 

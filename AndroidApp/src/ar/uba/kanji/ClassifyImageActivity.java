@@ -75,12 +75,14 @@ public class ClassifyImageActivity  extends Activity {
 
             final List<Classifier.Recognition> results = classifier.recognizeImage(read);
 
-            ArrayList<Kanji> arrayOfKanji = new ArrayList<Kanji>();
+            ArrayList<Kanji> arrayOfKanji = new ArrayList<>();
             for (final Classifier.Recognition recog : results) {
                 String[] parts = recog.getTitle().split(",");
                 Float probability = recog.getConfidence();
                 if(parts.length>4){
-                    arrayOfKanji.add(new Kanji(parts[0],parts[5],parts[4],parts[3],parts[2], parts[1],probability));
+                    String description=parts[5].substring(0,parts[5].length()-1).replaceAll("\\}",",").replaceAll("\\{","");
+                    String readings=parts[4].replaceAll(" ", ", ");
+                    arrayOfKanji.add(new Kanji(parts[0],description,readings,parts[3],parts[2], parts[1],probability));
                 }
                 else {
                     arrayOfKanji.add(new Kanji(parts[0].substring(0,1),"","","","","", probability));
