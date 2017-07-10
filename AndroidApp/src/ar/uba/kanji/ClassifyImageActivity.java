@@ -13,7 +13,10 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.provider.MediaStore;
 import android.util.Log;
+import android.view.MotionEvent;
+import android.view.View;
 import android.view.WindowManager;
+import android.widget.GridView;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -42,8 +45,6 @@ public class ClassifyImageActivity  extends Activity {
     public void onCreate(final Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.result);
-
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
         classifier =
@@ -89,17 +90,50 @@ public class ClassifyImageActivity  extends Activity {
                 }
             }
 
-            KanjiAdapter adapter = new KanjiAdapter(this, arrayOfKanji);
+            Boolean probHigh= (arrayOfKanji.get(0).probability > 40);
 
-            ListView listView = (ListView) findViewById(R.id.listviewresult);
-            listView.setAdapter(adapter);
+            if (probHigh){
+                ArrayList<Kanji> first = new ArrayList<>();
+                ArrayList<Kanji> others = new ArrayList<>();
+
+                first.add(arrayOfKanji.get(0));
+
+                others.add(arrayOfKanji.get(1));
+                others.add(arrayOfKanji.get(2));
+                others.add(arrayOfKanji.get(3));
+                others.add(arrayOfKanji.get(4));
+
+                KanjiAdapter adapter = new KanjiAdapter(this,first, false);
+                KanjiAdapter adapter2 = new KanjiAdapter(this,others,true);
+
+                setContentView(R.layout.result_with_highlighted);
+                ListView listView = (ListView) findViewById(R.id.listviewresult);
+                GridView g1 = (GridView) findViewById(R.id.grid1);
+
+                g1.setOnTouchListener(new View.OnTouchListener(){
+
+                    @Override
+                    public boolean onTouch(View v, MotionEvent event) {
+                        return event.getAction() == MotionEvent.ACTION_MOVE;
+                    }
+
+                });
+
+                listView.setAdapter(adapter);
+                g1.setAdapter(adapter2);
+            }
+            else {
+                KanjiAdapter adapter = new KanjiAdapter(this, arrayOfKanji, false);
+                setContentView(R.layout.result);
+                ListView listView = (ListView) findViewById(R.id.listviewresult);
+                listView.setAdapter(adapter);
+            }
 
         }
         catch (Exception e) {
             Log.v("OMG","excepcion");
         }
     }
-
 
     @Override
     public void onRequestPermissionsResult(
@@ -138,6 +172,7 @@ public class ClassifyImageActivity  extends Activity {
         startActivity(intent);
         finish();
     }
+
 
 
 

@@ -10,16 +10,19 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
-import static android.content.ClipDescription.MIMETYPE_TEXT_PLAIN;
 
 public class KanjiAdapter extends ArrayAdapter<Kanji> {
     Context c;
-    public KanjiAdapter(Context context, ArrayList<Kanji> users) {
+    Boolean smallview;
+
+    public KanjiAdapter(Context context, ArrayList<Kanji> users, Boolean small) {
 
         super(context, 0, users);
+        this.smallview=small;
         c = context;
     }
 
@@ -27,9 +30,11 @@ public class KanjiAdapter extends ArrayAdapter<Kanji> {
     public View getView(final int position, View convertView, ViewGroup parent) {
         final Kanji kanji = getItem(position);
 
-
-        if (convertView == null) {
+        if (convertView == null && smallview==false) {
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.result_list_adapter, parent, false);
+        }
+        else if (convertView==null){
+            convertView = LayoutInflater.from(getContext()).inflate(R.layout.result_list_adapter_small, parent, false);
         }
 
 
@@ -39,6 +44,10 @@ public class KanjiAdapter extends ArrayAdapter<Kanji> {
             @Override
             public void onClick(View v) {
                 String kanji = getItem(position).symbol;
+                CharSequence text = "Copied to clipboard";
+                int duration = Toast.LENGTH_SHORT;
+                Toast toast = Toast.makeText(c, text, duration);
+                toast.show();
                 ClipboardHelper.addToClipboard(kanji,c);
             }
         });
@@ -49,6 +58,10 @@ public class KanjiAdapter extends ArrayAdapter<Kanji> {
             @Override
             public void onClick(View v) {
                 String kanji = getItem(position).symbol;
+                CharSequence text = "Copied to clipboard";
+                int duration = Toast.LENGTH_SHORT;
+                Toast toast = Toast.makeText(c, text, duration);
+                toast.show();
                 ClipboardHelper.copyToClipboard(kanji,c);
             }
         });

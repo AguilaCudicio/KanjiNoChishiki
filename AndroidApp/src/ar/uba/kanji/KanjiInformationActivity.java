@@ -8,6 +8,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import static android.content.ClipDescription.MIMETYPE_TEXT_PLAIN;
 
@@ -53,6 +54,10 @@ public class KanjiInformationActivity extends Activity {
 
    public void copy(View view){
        ClipboardHelper.copyToClipboard(symbol,this.getApplicationContext());
+       CharSequence text = "Copied to clipboard";
+       int duration = Toast.LENGTH_SHORT;
+       Toast toast = Toast.makeText(this.getApplicationContext(), text, duration);
+       toast.show();
    }
 
    public void findInDictionary(View view){
@@ -68,6 +73,10 @@ public class KanjiInformationActivity extends Activity {
 
    public void copyPlus(View v) {
        ClipboardHelper.addToClipboard(symbol,this.getApplicationContext());
+       CharSequence text = "Copied to clipboard";
+       int duration = Toast.LENGTH_SHORT;
+       Toast toast = Toast.makeText(this.getApplicationContext(), text, duration);
+       toast.show();
     }
 
 

@@ -104,7 +104,7 @@ public class DictionaryActivity extends Activity {
 
         ArrayList<Kanji> arrayOfKanji = getArrayKanjis(result,labels);
 
-        KanjiAdapter adapter = new KanjiAdapter(this, arrayOfKanji);
+        KanjiAdapter adapter = new KanjiAdapter(this, arrayOfKanji, false);
 
         ListView listView = (ListView) findViewById(R.id.listviewresult);
         listView.setAdapter(adapter);

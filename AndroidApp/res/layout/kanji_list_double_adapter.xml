@@ -1,0 +1,228 @@
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="420px">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:background="@drawable/layout_bg"
+        android:layout_height="match_parent"
+        android:layout_weight="0.5"
+        android:layout_width="0dp"
+        android:padding="6dip"
+        android:weightSum="1">
+
+
+        <TextView
+            android:id="@+id/firstLine2"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignWithParentIfMissing="true"
+            android:layout_marginLeft="20px"
+            android:elegantTextHeight="true"
+            android:gravity="center"
+            android:maxLines="1"
+            android:text="kanji name"
+            android:textSize="35px"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true" />
+
+        <TextView
+            android:id="@+id/icon2original"
+            android:layout_width="match_parent"
+            android:layout_height="130px"
+            android:layout_margin="15px"
+            android:background="@drawable/layout_bg"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:text="D"
+            android:textColor="#000"
+            android:textSize="100px"
+            android:layout_weight="0.15" />
+
+
+        <LinearLayout
+            android:id="@+id/secondLine2"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:maxLines="1"
+            android:orientation="horizontal"
+            android:text="Description"
+            android:layout_above="@+id/thirdLine"
+            android:layout_alignParentEnd="true"
+            android:layout_marginBottom="10dp"
+            android:layout_toEndOf="@+id/icon2">
+
+            <ImageButton
+                android:id="@+id/icon12"
+                android:layout_width="80px"
+                android:layout_height="80px"
+                android:layout_marginRight="20px"
+                android:background="@drawable/copyicon"
+                android:contentDescription="TODO" />
+
+            />
+
+            <ImageButton
+                android:id="@+id/icon22"
+                android:layout_width="90px"
+                android:layout_height="80px"
+                android:layout_marginLeft="20px"
+                android:background="@drawable/dictionary"
+                android:contentDescription="TODO" />
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/thirdLine2"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:maxLines="1"
+            android:text="Description"
+            android:orientation="horizontal"
+            android:layout_above="@+id/firstLine"
+            android:layout_alignParentEnd="true"
+            android:layout_marginBottom="10dp"
+            android:layout_toEndOf="@+id/icon">
+
+
+            <ImageButton
+                android:id="@+id/icon32"
+                android:background="@drawable/copyplus"
+                android:layout_height="80px"
+                android:layout_width="80px"
+                android:layout_marginRight="20px"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentTop="true"
+                android:contentDescription="TODO"
+                />
+
+            <ImageButton
+                android:id="@+id/icon42"
+                android:layout_width="90px"
+                android:layout_height="80px"
+                android:layout_marginLeft="20px"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentTop="true"
+                android:contentDescription="TODO"
+                android:background="@drawable/dictionaryplus" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:background="@drawable/layout_bg"
+        android:layout_height="match_parent"
+        android:layout_weight="0.5"
+        android:layout_width="0dp"
+        android:padding="6dip"
+        android:weightSum="1">
+
+
+        <TextView
+            android:id="@+id/firstLine3"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignWithParentIfMissing="true"
+            android:layout_marginLeft="20px"
+            android:elegantTextHeight="true"
+            android:gravity="center"
+            android:maxLines="1"
+            android:text="kanji name"
+            android:textSize="35px"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true" />
+
+        <TextView
+            android:id="@+id/icon3original"
+            android:layout_width="match_parent"
+            android:layout_height="130px"
+            android:layout_margin="15px"
+            android:background="@drawable/layout_bg"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:text="D"
+            android:textColor="#000"
+            android:textSize="100px"
+            android:layout_weight="0.15" />
+
+
+        <LinearLayout
+            android:id="@+id/secondLine3"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:maxLines="1"
+            android:orientation="horizontal"
+            android:text="Description"
+            android:layout_above="@+id/thirdLine"
+            android:layout_alignParentEnd="true"
+            android:layout_marginBottom="10dp"
+            android:layout_toEndOf="@+id/icon">
+
+            <ImageButton
+                android:id="@+id/icon13"
+                android:layout_width="80px"
+                android:layout_height="80px"
+                android:layout_marginRight="20px"
+                android:background="@drawable/copyicon"
+                android:contentDescription="TODO" />
+
+            />
+
+            <ImageButton
+                android:id="@+id/icon23"
+                android:layout_width="90px"
+                android:layout_height="80px"
+                android:layout_marginLeft="20px"
+                android:background="@drawable/dictionary"
+                android:contentDescription="TODO" />
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/thirdLine3"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:maxLines="1"
+            android:text="Description"
+            android:orientation="horizontal"
+            android:layout_above="@+id/firstLine3"
+            android:layout_alignParentEnd="true"
+            android:layout_marginBottom="10dp"
+            android:layout_toEndOf="@+id/icon">
+
+
+            <ImageButton
+                android:id="@+id/icon33"
+                android:background="@drawable/copyplus"
+                android:layout_height="80px"
+                android:layout_width="80px"
+                android:layout_marginRight="20px"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentTop="true"
+                android:contentDescription="TODO"
+                />
+
+            <ImageButton
+                android:id="@+id/icon4"
+                android:layout_width="90px"
+                android:layout_height="80px"
+                android:layout_marginLeft="20px"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentTop="true"
+                android:contentDescription="TODO"
+                android:background="@drawable/dictionaryplus" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>
