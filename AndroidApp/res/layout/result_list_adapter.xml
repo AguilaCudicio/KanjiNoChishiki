@@ -1,7 +1,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:background="@drawable/layout_bg"
-    android:layout_height="320px"
+    android:layout_height="190dp"
     android:padding="6dip" >
 
 
@@ -15,7 +15,7 @@
         android:gravity="center"
         android:maxLines="1"
         android:text="kanji name"
-        android:textSize="50px"
+        android:textSize="30sp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true" />
 
@@ -23,13 +23,15 @@
         android:id="@+id/icon"
         android:text="D"
         android:textColor="#000"
-        android:textSize="190px"
-        android:layout_width="250px"
+        android:textSize="100sp"
+        android:layout_width="130dp"
         android:background="@drawable/layout_bg"
-        android:layout_height="230px"
+        android:layout_height="120dp"
         android:gravity="center"
         android:layout_marginLeft="10px"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_alignBottom="@+id/thirdLine"
+        android:layout_alignParentTop="true" />
 
 
     <LinearLayout
@@ -40,15 +42,13 @@
         android:maxLines="1"
         android:orientation="horizontal"
         android:text="Description"
-        android:layout_above="@+id/thirdLine"
         android:layout_alignParentEnd="true"
-        android:layout_marginBottom="10dp"
         android:layout_toEndOf="@+id/icon">
 
         <ImageButton
             android:id="@+id/icon1"
-            android:layout_width="80px"
-            android:layout_height="80px"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:layout_marginRight="20px"
             android:background="@drawable/copyicon"
             android:contentDescription="TODO" />
@@ -57,8 +57,8 @@
 
         <ImageButton
             android:id="@+id/icon2"
-            android:layout_width="90px"
-            android:layout_height="80px"
+            android:layout_width="70dp"
+            android:layout_height="60dp"
             android:layout_marginLeft="20px"
             android:background="@drawable/dictionary"
             android:contentDescription="TODO" />
@@ -73,17 +73,17 @@
         android:maxLines="1"
         android:text="Description"
         android:orientation="horizontal"
-        android:layout_above="@+id/firstLine"
+        android:layout_below="@+id/secondLine"
         android:layout_alignParentEnd="true"
-        android:layout_marginBottom="10dp"
+        android:layout_marginTop="12dp"
         android:layout_toEndOf="@+id/icon">
 
 
         <ImageButton
             android:id="@+id/icon3"
             android:background="@drawable/copyplus"
-            android:layout_height="80px"
-            android:layout_width="80px"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:layout_marginRight="20px"
             android:layout_alignParentBottom="true"
             android:layout_alignParentTop="true"
@@ -92,8 +92,8 @@
 
         <ImageButton
             android:id="@+id/icon4"
-            android:layout_width="90px"
-            android:layout_height="80px"
+            android:layout_width="70dp"
+            android:layout_height="60dp"
             android:layout_marginLeft="20px"
             android:layout_alignParentBottom="true"
             android:layout_alignParentTop="true"

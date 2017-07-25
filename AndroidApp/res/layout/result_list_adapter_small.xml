@@ -1,10 +1,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:background="@drawable/layout_bg"
-    android:layout_height="420px"
+    android:layout_height="250dp"
 
     android:layout_width="fill_parent"
-    android:padding="6dip"
     android:weightSum="1">
 
 
@@ -18,41 +17,43 @@
         android:gravity="center"
         android:maxLines="1"
         android:text="kanji name"
-        android:textSize="35px"
+        android:textSize="15dp"
+        android:layout_marginTop="5dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true" />
 
     <TextView
         android:id="@+id/icon"
         android:layout_width="match_parent"
-        android:layout_height="130px"
-        android:layout_margin="15px"
+        android:layout_height="95dp"
+        android:layout_margin="2dp"
         android:background="@drawable/layout_bg"
         android:gravity="center"
         android:textAlignment="center"
         android:text="D"
         android:textColor="#000"
-        android:textSize="100px"
-        android:layout_weight="0.15" />
+        android:textSize="70dp"
+        />
 
 
     <LinearLayout
         android:id="@+id/secondLine"
-        android:layout_height="wrap_content"
         android:layout_width="match_parent"
-        android:gravity="center"
-        android:maxLines="1"
-        android:orientation="horizontal"
-        android:text="Description"
+        android:layout_height="wrap_content"
         android:layout_above="@+id/thirdLine"
         android:layout_alignParentEnd="true"
         android:layout_marginBottom="10dp"
-        android:layout_toEndOf="@+id/icon2">
+        android:layout_toEndOf="@+id/icon2"
+        android:gravity="center"
+        android:maxLines="1"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal"
+        android:text="Description">
 
         <ImageButton
             android:id="@+id/icon1"
-            android:layout_width="80px"
-            android:layout_height="80px"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
             android:layout_marginRight="20px"
             android:background="@drawable/copyicon"
             android:contentDescription="TODO" />
@@ -61,48 +62,48 @@
 
         <ImageButton
             android:id="@+id/icon2"
-            android:layout_width="90px"
-            android:layout_height="80px"
+            android:layout_width="50dp"
+            android:layout_height="45dp"
             android:layout_marginLeft="20px"
             android:background="@drawable/dictionary"
             android:contentDescription="TODO" />
 
 
     </LinearLayout>
+
     <LinearLayout
         android:id="@+id/thirdLine"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:maxLines="1"
-        android:text="Description"
-        android:orientation="horizontal"
         android:layout_above="@+id/firstLine"
         android:layout_alignParentEnd="true"
         android:layout_marginBottom="10dp"
-        android:layout_toEndOf="@+id/icon">
+        android:layout_toEndOf="@+id/icon"
+        android:gravity="center"
+        android:maxLines="1"
+        android:orientation="horizontal"
+        android:text="Description">
 
 
         <ImageButton
             android:id="@+id/icon3"
-            android:background="@drawable/copyplus"
-            android:layout_height="80px"
-            android:layout_width="80px"
-            android:layout_marginRight="20px"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
             android:layout_alignParentBottom="true"
             android:layout_alignParentTop="true"
-            android:contentDescription="TODO"
-            />
+            android:layout_marginRight="20px"
+            android:background="@drawable/copyplus"
+            android:contentDescription="TODO" />
 
         <ImageButton
             android:id="@+id/icon4"
-            android:layout_width="90px"
-            android:layout_height="80px"
-            android:layout_marginLeft="20px"
+            android:layout_width="45dp"
+            android:layout_height="50dp"
             android:layout_alignParentBottom="true"
             android:layout_alignParentTop="true"
-            android:contentDescription="TODO"
-            android:background="@drawable/dictionaryplus" />
+            android:layout_marginLeft="20px"
+            android:background="@drawable/dictionaryplus"
+            android:contentDescription="TODO" />
 
     </LinearLayout>
 
