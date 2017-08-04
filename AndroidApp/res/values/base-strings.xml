@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <resources>
-    <string name="app_name">Kanji</string>
-    <string name="activity_name_classification">Kanji Classify</string>
+    <string name="app_name">KNC</string>
+    <string name="activity_name_classification">KNC</string>
 </resources>
